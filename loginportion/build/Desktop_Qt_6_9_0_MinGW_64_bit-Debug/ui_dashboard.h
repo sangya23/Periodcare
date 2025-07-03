@@ -44,7 +44,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(90, 30, 101, 41));
+        label->setGeometry(QRect(90, 30, 261, 41));
         QPalette palette1;
         QBrush brush1(QColor(61, 61, 61, 255));
         brush1.setStyle(Qt::BrushStyle::SolidPattern);
