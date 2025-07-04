@@ -17,7 +17,6 @@ CONFIG += c++17
 SOURCES += \
     dashboard.cpp \
     forgotpwd.cpp \
-
     homepage.cpp \
     login.cpp \
     main.cpp \
@@ -33,7 +32,6 @@ HEADERS += \
 FORMS += \
     dashboard.ui \
     forgotpwd.ui \
-
     homepage.ui \
     login.ui \
     signup.ui

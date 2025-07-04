@@ -5,7 +5,6 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
-
 #include <QRegularExpression>
 
 bool isPasswordStrong(const QString &password) {
@@ -58,6 +57,7 @@ void Signup::on_createacc_clicked()
         QMessageBox::warning(this, "Input Error", "Please fill in all fields.");
         return;
     }
+
 
         if (!isPasswordStrong(password)) {
             QMessageBox::warning(nullptr, "Weak Password",

@@ -65,7 +65,11 @@
      <rect>
       <x>90</x>
       <y>30</y>
+<<<<<<< HEAD
       <width>261</width>
+=======
+      <width>101</width>
+>>>>>>> 327f580a0d02e4b60323c115d31da0b2a2145839
       <height>41</height>
      </rect>
     </property>
