@@ -1,0 +1,12 @@
+release/dashboard.o
+release/forgotpwd.o
+release/homepage.o
+release/login.o
+release/main.o
+release/signup.o
+release/qrc_Resource.o
+release/moc_dashboard.o
+release/moc_forgotpwd.o
+release/moc_homepage.o
+release/moc_login.o
+release/moc_signup.o

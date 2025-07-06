@@ -65,11 +65,7 @@
      <rect>
       <x>90</x>
       <y>30</y>
-<<<<<<< HEAD
-      <width>261</width>
-=======
       <width>101</width>
->>>>>>> 327f580a0d02e4b60323c115d31da0b2a2145839
       <height>41</height>
      </rect>
     </property>
@@ -286,6 +282,27 @@
     </property>
     <property name="text">
      <string>Period.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>200</y>
+      <width>121</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+border:2px solid;
+	background-image: url(:/loginicons/periodsimg2.jpg);
+	border-image: url(:/loginicons/periodsimg2.jpg);
+}
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>

@@ -3,9 +3,6 @@ QT       += core gui sql
 
 
 
-
-
->>>>>>> 327f580a0d02e4b60323c115d31da0b2a2145839
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17

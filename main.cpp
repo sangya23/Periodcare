@@ -1,4 +1,5 @@
 #include "login.h"
+#include "homepage.h"
 #include <QApplication>
 #include <QSqlDatabase>
 #include <QSqlError>
@@ -23,7 +24,8 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     connectToDatabase();
-    MainWindow w;
-    w.show();
+    MainWindow h;
+    h.show();
+
     return a.exec();
 }
