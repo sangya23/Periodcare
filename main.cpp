@@ -1,4 +1,3 @@
-#include "login.h"
 #include "homepage.h"
 #include <QApplication>
 #include <QSqlDatabase>
@@ -26,6 +25,5 @@ int main(int argc, char *argv[])
     connectToDatabase();
    Homepage h;
     h.show();
-
     return a.exec();
 }
