@@ -140,7 +140,7 @@ background-color: #e6769f;}</string>
 }</string>
         </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string/>
         </property>
        </widget>
       </item>

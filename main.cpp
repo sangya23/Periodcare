@@ -11,7 +11,7 @@ void connectToDatabase() {
     }
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "UserInfoConnection");
-    db.setDatabaseName("C:/Users/sangy/OneDrive/Desktop/Login/PeriodcareLogin/Period/userinfo.db");
+    db.setDatabaseName("C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/userinfo.db");
 
     if (!db.open()) {
         qDebug() << "Failed to open database:" << db.lastError().text();
