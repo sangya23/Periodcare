@@ -49,8 +49,9 @@ void MainWindow::Login()
 
     if (query.next()) {
         QString name = query.value(0).toString();
-        dashboardWindow= new Dashboard(this);
+        dashboardWindow= new Dashboard();
         dashboardWindow->show();
+        this->close();
     } else {
         QMessageBox::warning(this, "Login Failed", "Invalid email or password.");
     }
@@ -59,9 +60,8 @@ void MainWindow::Login()
 
 void MainWindow::on_createaccount_clicked()
 {
-    signupWindow = new Signup(this);
+    signupWindow = new Signup();
     signupWindow->show();
-
 
 }
 

@@ -17,21 +17,24 @@ SOURCES += \
     homepage.cpp \
     login.cpp \
     main.cpp \
-    signup.cpp
+    signup.cpp \
+    welcome.cpp
 
 HEADERS += \
     dashboard.h \
     forgotpwd.h \
     homepage.h \
     login.h \
-    signup.h
+    signup.h \
+    welcome.h
 
 FORMS += \
     dashboard.ui \
     forgotpwd.ui \
     homepage.ui \
     login.ui \
-    signup.ui
+    signup.ui \
+    welcome.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

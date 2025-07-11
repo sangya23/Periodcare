@@ -335,17 +335,16 @@
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton{
-font-size:12px;
-}
-QPushButton {
+        <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
     font: bold 14px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }
-</string>
+QPushButton:hover
+{
+background-color: #e6769f;}</string>
        </property>
        <property name="text">
         <string>Login</string>
@@ -472,16 +471,16 @@ QPushButton {
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton{
-font-size:12px;
-}
-QPushButton {
+        <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
     font: 12px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }
+QPushButton:hover
+{
+background-color: #e6769f;}
 </string>
        </property>
        <property name="text">
@@ -508,6 +507,9 @@ QPushButton {
     border-radius: 8px;
     padding: 6px 12px;
 }
+QPushButton:hover
+{
+background-color: #e6769f;}
 </string>
        </property>
        <property name="text">

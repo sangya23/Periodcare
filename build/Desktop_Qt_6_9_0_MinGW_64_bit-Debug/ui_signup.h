@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
@@ -22,6 +21,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,7 +32,6 @@ public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QFrame *frame;
-    QCheckBox *checkBox;
     QPushButton *createacc;
     QLabel *Signupheading;
     QLineEdit *usersule;
@@ -40,6 +39,7 @@ public:
     QLineEdit *pwdsule;
     QPushButton *createaccount;
     QLabel *label;
+    QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QMenu *menuSignup_Page;
     QStatusBar *statusbar;
@@ -138,27 +138,19 @@ public:
 "}"));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
-        checkBox = new QCheckBox(frame);
-        checkBox->setObjectName("checkBox");
-        checkBox->setGeometry(QRect(60, 290, 221, 21));
-        checkBox->setStyleSheet(QString::fromUtf8("QCheckBox\n"
-"{\n"
-"	background-color:#fce4ec\n"
-"}"));
         createacc = new QPushButton(frame);
         createacc->setObjectName("createacc");
-        createacc->setGeometry(QRect(70, 330, 141, 31));
-        createacc->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font-size:12px;\n"
-"}\n"
-"QPushButton {\n"
+        createacc->setGeometry(QRect(80, 350, 141, 31));
+        createacc->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
-"\n"
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}\n"
 ""));
         Signupheading = new QLabel(frame);
         Signupheading->setObjectName("Signupheading");
@@ -208,19 +200,18 @@ public:
 ""));
         createaccount = new QPushButton(frame);
         createaccount->setObjectName("createaccount");
-        createaccount->setGeometry(QRect(50, 380, 181, 31));
+        createaccount->setGeometry(QRect(50, 390, 181, 31));
         createaccount->setAutoFillBackground(false);
-        createaccount->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font-size:12px;\n"
-"}\n"
-"QPushButton {\n"
+        createaccount->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 6px;\n"
 "}\n"
-""));
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}"));
         label = new QLabel(frame);
         label->setObjectName("label");
         label->setGeometry(QRect(360, 0, 390, 464));
@@ -236,6 +227,13 @@ public:
         label->setWordWrap(false);
         label->setMargin(5);
         label->setIndent(1);
+        textBrowser = new QTextBrowser(frame);
+        textBrowser->setObjectName("textBrowser");
+        textBrowser->setGeometry(QRect(50, 280, 256, 31));
+        textBrowser->setStyleSheet(QString::fromUtf8("QTextBrowser\n"
+"{\n"
+"border-color:#fce4ec;\n"
+"}"));
 
         gridLayout->addWidget(frame, 0, 0, 1, 1);
 
@@ -260,11 +258,19 @@ public:
     void retranslateUi(QMainWindow *Signup)
     {
         Signup->setWindowTitle(QCoreApplication::translate("Signup", "MainWindow", nullptr));
-        checkBox->setText(QCoreApplication::translate("Signup", "  I agree to the terms and conditions", nullptr));
         createacc->setText(QCoreApplication::translate("Signup", "Create Account", nullptr));
         Signupheading->setText(QCoreApplication::translate("Signup", "Sign Up", nullptr));
         createaccount->setText(QCoreApplication::translate("Signup", "Already have an account?", nullptr));
         label->setText(QString());
+        textBrowser->setHtml(QCoreApplication::translate("Signup", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">By signing in you're agreeing to our terms and conditions</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         menuSignup_Page->setTitle(QCoreApplication::translate("Signup", "Signup Page", nullptr));
     } // retranslateUi
 

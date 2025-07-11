@@ -19,7 +19,6 @@ private slots:
     void on_createacc_clicked();
 
     void on_createaccount_clicked();
-
 private:
     Ui::Signup *ui;
 };

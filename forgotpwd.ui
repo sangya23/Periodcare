@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>410</width>
-    <height>268</height>
+    <width>424</width>
+    <height>273</height>
    </rect>
   </property>
   <property name="palette">
@@ -127,7 +127,9 @@
     border-radius: 8px;
     padding: 6px 12px;
 }
-</string>
+QPushButton:hover
+{
+background-color: #e6769f;}</string>
    </property>
    <property name="orientation">
     <enum>Qt::Orientation::Horizontal</enum>

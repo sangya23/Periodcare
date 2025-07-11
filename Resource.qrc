@@ -5,5 +5,7 @@
         <file>passimg.jpeg</file>
         <file>periodsimg1.jpg</file>
         <file>periodsimg2.jpg</file>
+        <file>515858058_1680459882674160_7226127355213665687_n.jpg</file>
     </qresource>
+    <qresource prefix="/tryout"/>
 </RCC>

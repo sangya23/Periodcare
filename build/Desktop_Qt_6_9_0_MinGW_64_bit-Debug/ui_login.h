@@ -163,17 +163,16 @@ public:
         lOGIN->setObjectName("lOGIN");
         lOGIN->setGeometry(QRect(110, 240, 91, 31));
         lOGIN->setAutoFillBackground(false);
-        lOGIN->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font-size:12px;\n"
-"}\n"
-"QPushButton {\n"
+        lOGIN->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: bold 14px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
-""));
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}"));
         label = new QLabel(frame);
         label->setObjectName("label");
         label->setGeometry(QRect(90, 40, 101, 41));
@@ -222,16 +221,16 @@ public:
         createaccount->setObjectName("createaccount");
         createaccount->setGeometry(QRect(160, 290, 131, 26));
         createaccount->setAutoFillBackground(false);
-        createaccount->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"font-size:12px;\n"
-"}\n"
-"QPushButton {\n"
+        createaccount->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}\n"
 ""));
         forgotpwd = new QPushButton(frame);
         forgotpwd->setObjectName("forgotpwd");
@@ -244,6 +243,9 @@ public:
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}\n"
 ""));
         label_2->raise();
         lOGIN->raise();

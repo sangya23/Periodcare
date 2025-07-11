@@ -30,7 +30,7 @@ public:
     {
         if (forgotpwd->objectName().isEmpty())
             forgotpwd->setObjectName("forgotpwd");
-        forgotpwd->resize(410, 268);
+        forgotpwd->resize(424, 273);
         QPalette palette;
         QBrush brush(QColor(252, 228, 236, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -58,7 +58,9 @@ public:
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
-""));
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}"));
         buttonBox->setOrientation(Qt::Orientation::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
         label = new QLabel(forgotpwd);

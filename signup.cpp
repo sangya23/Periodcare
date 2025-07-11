@@ -1,5 +1,6 @@
 #include "signup.h"
 #include "ui_signup.h"
+#include "login.h"
 #include <QMessageBox>
 #include <qstring.h>
 #include <QSqlDatabase>
@@ -105,5 +106,4 @@ void Signup::on_createacc_clicked()
 void Signup::on_createaccount_clicked()
 {
     this->close();
-
 }
