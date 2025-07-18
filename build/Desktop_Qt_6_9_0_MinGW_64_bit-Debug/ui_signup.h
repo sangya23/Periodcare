@@ -34,10 +34,10 @@ public:
     QFrame *frame;
     QPushButton *createacc;
     QLabel *Signupheading;
-    QLineEdit *usersule;
+    QLineEdit *passkeysule;
     QLineEdit *emailsule;
     QLineEdit *pwdsule;
-    QPushButton *createaccount;
+    QPushButton *alreadyacc;
     QLabel *label;
     QTextBrowser *textBrowser;
     QMenuBar *menubar;
@@ -162,10 +162,10 @@ public:
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}"));
-        usersule = new QLineEdit(frame);
-        usersule->setObjectName("usersule");
-        usersule->setGeometry(QRect(30, 130, 251, 31));
-        usersule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+        passkeysule = new QLineEdit(frame);
+        passkeysule->setObjectName("passkeysule");
+        passkeysule->setGeometry(QRect(30, 240, 251, 31));
+        passkeysule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
 "    font: 13px \"Segoe UI\";\n"
@@ -176,7 +176,7 @@ public:
 ""));
         emailsule = new QLineEdit(frame);
         emailsule->setObjectName("emailsule");
-        emailsule->setGeometry(QRect(30, 180, 251, 31));
+        emailsule->setGeometry(QRect(30, 130, 251, 31));
         emailsule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -188,7 +188,7 @@ public:
 ""));
         pwdsule = new QLineEdit(frame);
         pwdsule->setObjectName("pwdsule");
-        pwdsule->setGeometry(QRect(30, 240, 251, 31));
+        pwdsule->setGeometry(QRect(30, 180, 251, 31));
         pwdsule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -198,11 +198,11 @@ public:
 "    padding: 6px;\n"
 "}\n"
 ""));
-        createaccount = new QPushButton(frame);
-        createaccount->setObjectName("createaccount");
-        createaccount->setGeometry(QRect(50, 390, 181, 31));
-        createaccount->setAutoFillBackground(false);
-        createaccount->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        alreadyacc = new QPushButton(frame);
+        alreadyacc->setObjectName("alreadyacc");
+        alreadyacc->setGeometry(QRect(70, 390, 181, 31));
+        alreadyacc->setAutoFillBackground(false);
+        alreadyacc->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -229,7 +229,7 @@ public:
         label->setIndent(1);
         textBrowser = new QTextBrowser(frame);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(50, 280, 256, 31));
+        textBrowser->setGeometry(QRect(30, 280, 301, 41));
         textBrowser->setStyleSheet(QString::fromUtf8("QTextBrowser\n"
 "{\n"
 "border-color:#fce4ec;\n"
@@ -260,7 +260,7 @@ public:
         Signup->setWindowTitle(QCoreApplication::translate("Signup", "MainWindow", nullptr));
         createacc->setText(QCoreApplication::translate("Signup", "Create Account", nullptr));
         Signupheading->setText(QCoreApplication::translate("Signup", "Sign Up", nullptr));
-        createaccount->setText(QCoreApplication::translate("Signup", "Already have an account?", nullptr));
+        alreadyacc->setText(QCoreApplication::translate("Signup", "Already have an account?", nullptr));
         label->setText(QString());
         textBrowser->setHtml(QCoreApplication::translate("Signup", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
@@ -269,7 +269,7 @@ public:
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">By signing in you're agreeing to our terms and conditions</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">By signing in you're agreeing to your data being used by peridcare</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
         menuSignup_Page->setTitle(QCoreApplication::translate("Signup", "Signup Page", nullptr));
     } // retranslateUi

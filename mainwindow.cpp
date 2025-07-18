@@ -111,7 +111,7 @@ void MainWindow::openAvatarSelectionDialog()
 
 void MainWindow::saveProfileToDatabase()
 {
-    QString dbPath = "H:/Project/Period/user_profiles.db";
+    QString dbPath = "C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/user_profiles.db";
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "SaveConnection");
     db.setDatabaseName(dbPath);
 

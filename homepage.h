@@ -1,6 +1,6 @@
 #ifndef HOMEPAGE_H
 #define HOMEPAGE_H
-#include "login.h"
+#include "loginpage.h"
 
 #include <QMainWindow>
 
@@ -20,7 +20,7 @@ private slots:
     void on_loginpb_clicked();
 
 private:
-    MainWindow *LoginWindow;
+    Loginpage *LoginWindow;
 private:
     Ui::Homepage *ui;
 };

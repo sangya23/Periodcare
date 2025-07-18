@@ -10,21 +10,28 @@
 #define UI_FORGOTPWD_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAbstractButton>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_forgotpwd
 {
 public:
-    QDialogButtonBox *buttonBox;
     QLabel *label;
-    QLineEdit *emailfple;
+    QLineEdit *recovpwdle;
+    QLineEdit *emailpwdle;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *okpb;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *forgotpwd)
     {
@@ -48,21 +55,6 @@ public:
 "{\n"
 "	Background-color:#fce4ec;\n"
 "}"));
-        buttonBox = new QDialogButtonBox(forgotpwd);
-        buttonBox->setObjectName("buttonBox");
-        buttonBox->setGeometry(QRect(-90, 160, 341, 32));
-        buttonBox->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: #F497B6;      \n"
-"    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
-"    border-radius: 8px;\n"
-"    padding: 6px 12px;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"background-color: #e6769f;}"));
-        buttonBox->setOrientation(Qt::Orientation::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
         label = new QLabel(forgotpwd);
         label->setObjectName("label");
         label->setGeometry(QRect(110, 20, 201, 41));
@@ -74,10 +66,10 @@ public:
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}"));
-        emailfple = new QLineEdit(forgotpwd);
-        emailfple->setObjectName("emailfple");
-        emailfple->setGeometry(QRect(30, 110, 341, 31));
-        emailfple->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+        recovpwdle = new QLineEdit(forgotpwd);
+        recovpwdle->setObjectName("recovpwdle");
+        recovpwdle->setGeometry(QRect(30, 150, 341, 31));
+        recovpwdle->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
 "    font: 13px \"Segoe UI\";\n"
@@ -86,10 +78,62 @@ public:
 "    padding: 6px;\n"
 "}\n"
 ""));
+        emailpwdle = new QLineEdit(forgotpwd);
+        emailpwdle->setObjectName("emailpwdle");
+        emailpwdle->setGeometry(QRect(30, 90, 341, 31));
+        emailpwdle->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    background-color: #FFFFFF;\n"
+"    color: #3D3D3D;\n"
+"    font: 13px \"Segoe UI\";\n"
+"    border: 1px solid #CCCCCC;\n"
+"    border-radius: 6px;\n"
+"    padding: 6px;\n"
+"}\n"
+""));
+        horizontalLayoutWidget = new QWidget(forgotpwd);
+        horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
+        horizontalLayoutWidget->setGeometry(QRect(89, 200, 161, 80));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        okpb = new QPushButton(horizontalLayoutWidget);
+        okpb->setObjectName("okpb");
+        okpb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #F497B6;      \n"
+"    color: white;                   \n"
+"    font: 12px \"Arial\";\n"
+"    border-radius: 8px;\n"
+"    padding: 6px 6px;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}"));
+
+        horizontalLayout->addWidget(okpb);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        pushButton = new QPushButton(horizontalLayoutWidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #F497B6;      \n"
+"    color: white;                   \n"
+"    font: 12px \"Arial\";\n"
+"    border-radius: 8px;\n"
+"    padding: 6px 6px;\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"background-color: #e6769f;}"));
+
+        horizontalLayout->addWidget(pushButton);
+
+        horizontalLayout->setStretch(0, 1);
+        horizontalLayout->setStretch(2, 2);
 
         retranslateUi(forgotpwd);
-        QObject::connect(buttonBox, &QDialogButtonBox::accepted, forgotpwd, qOverload<>(&QDialog::accept));
-        QObject::connect(buttonBox, &QDialogButtonBox::rejected, forgotpwd, qOverload<>(&QDialog::reject));
 
         QMetaObject::connectSlotsByName(forgotpwd);
     } // setupUi
@@ -98,6 +142,8 @@ public:
     {
         forgotpwd->setWindowTitle(QCoreApplication::translate("forgotpwd", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("forgotpwd", "<html><head/><body><p align=\"center\">Forgot Password</p></body></html>", nullptr));
+        okpb->setText(QCoreApplication::translate("forgotpwd", "OK", nullptr));
+        pushButton->setText(QCoreApplication::translate("forgotpwd", "Cancel", nullptr));
     } // retranslateUi
 
 };

@@ -1,6 +1,6 @@
 #include "homepage.h"
 #include "ui_homepage.h"
-#include "login.h"
+#include "loginpage.h"
 
 Homepage::Homepage(QWidget *parent)
     : QMainWindow(parent)
@@ -16,7 +16,7 @@ Homepage::~Homepage()
 
 void Homepage::on_loginpb_clicked()
 {
-    LoginWindow=new MainWindow();
+    LoginWindow=new Loginpage();
     LoginWindow->show();
     this->close();
 }

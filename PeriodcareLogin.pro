@@ -1,8 +1,5 @@
 QT       += core gui sql
 
-
-
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -12,29 +9,39 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    changepwd.cpp \
     dashboard.cpp \
     forgotpwd.cpp \
     homepage.cpp \
-    login.cpp \
+    loginpage.cpp \
     main.cpp \
     signup.cpp \
-    welcome.cpp
+    welcome.cpp  \
+    editprofilewindow.cpp \
+    mainwindow.cpp
 
 HEADERS += \
+    changepwd.h \
     dashboard.h \
     forgotpwd.h \
     homepage.h \
-    login.h \
+    loginpage.h \
     signup.h \
-    welcome.h
+    welcome.h \
+    avatarutils.h \
+    editprofilewindow.h \
+    mainwindow.h
 
 FORMS += \
+    changepwd.ui \
     dashboard.ui \
     forgotpwd.ui \
     homepage.ui \
-    login.ui \
+    loginpage.ui \
     signup.ui \
-    welcome.ui
+    welcome.ui \
+    editprofilewindow.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -45,4 +52,5 @@ DISTFILES += \
     ../../../../../Downloads/user.png
 
 RESOURCES += \
-    Resource.qrc
+    Resource.qrc \
+    avatar.qrc

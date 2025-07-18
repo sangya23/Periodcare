@@ -2,7 +2,7 @@
 #define FORGOTPWD_H
 
 #include <QDialog>
-
+#include "changepwd.h"
 namespace Ui {
 class forgotpwd;
 }
@@ -16,8 +16,11 @@ public:
     ~forgotpwd();
 
 private slots:
-    void on_buttonBox_accepted();
+    void on_okpb_clicked();
 
+    void on_pushButton_clicked();
+private:
+    changepwd *change;
 private:
     Ui::forgotpwd *ui;
 };

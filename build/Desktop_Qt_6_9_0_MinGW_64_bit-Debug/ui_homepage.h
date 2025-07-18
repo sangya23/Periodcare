@@ -19,7 +19,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -38,7 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QLabel *label;
     QSpacerItem *horizontalSpacer_3;
-    QTextEdit *textEdit;
+    QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -67,6 +67,8 @@ public:
         horizontalLayout->setSizeConstraint(QLayout::SizeConstraint::SetMinAndMaxSize);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
+        label_2->setMinimumSize(QSize(72, 50));
+        label_2->setMaximumSize(QSize(72, 50));
         label_2->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
 "border-image: url(:/loginicons/515858058_1680459882674160_7226127355213665687_n.jpg);\n"
@@ -107,7 +109,6 @@ public:
 
         horizontalLayout->addWidget(loginpb);
 
-        horizontalLayout->setStretch(0, 1);
         horizontalLayout->setStretch(1, 4);
         horizontalLayout->setStretch(2, 4);
         horizontalLayout->setStretch(3, 4);
@@ -132,18 +133,17 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer_3);
 
-        textEdit = new QTextEdit(centralwidget);
-        textEdit->setObjectName("textEdit");
-        textEdit->setStyleSheet(QString::fromUtf8("QTextEditor\n"
+        textBrowser = new QTextBrowser(centralwidget);
+        textBrowser->setObjectName("textBrowser");
+        textBrowser->setStyleSheet(QString::fromUtf8("QTextBrowser\n"
 "{\n"
 "border-radius:20px;\n"
-"\n"
+"padding:6px 6px;\n"
 "}"));
 
-        horizontalLayout_4->addWidget(textEdit);
+        horizontalLayout_4->addWidget(textBrowser, 0, Qt::AlignmentFlag::AlignHCenter);
 
         horizontalLayout_4->setStretch(0, 3);
-        horizontalLayout_4->setStretch(2, 3);
 
         gridLayout_2->addLayout(horizontalLayout_4, 1, 0, 1, 1);
 
@@ -165,21 +165,21 @@ public:
     {
         Homepage->setWindowTitle(QCoreApplication::translate("Homepage", "MainWindow", nullptr));
         label_2->setText(QString());
-        label_3->setText(QCoreApplication::translate("Homepage", "PeriodCare", nullptr));
+        label_3->setText(QCoreApplication::translate("Homepage", "\360\237\214\270PeriodCare\360\237\214\270", nullptr));
         loginpb->setText(QCoreApplication::translate("Homepage", "Login", nullptr));
-        label->setText(QCoreApplication::translate("Homepage", "TextLabel", nullptr));
-        textEdit->setHtml(QCoreApplication::translate("Homepage", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        label->setText(QString());
+        textBrowser->setHtml(QCoreApplication::translate("Homepage", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
 "li.unchecked::marker { content: \"\\2610\"; }\n"
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The features that we have are as followsssssss:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\360\237\214\270The features that we have are as followsssssss:\360\237\214\270</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">a tracker</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">a mood log</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margi"
-                        "n-right:0px; -qt-block-indent:0; text-indent:0px;\">Yoga poses </p>\n"
+"<p style=\" margin-top:0px; margin-bo"
+                        "ttom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Yoga poses </p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">faowe</p></body></html>", nullptr));
     } // retranslateUi
 

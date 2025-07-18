@@ -28,7 +28,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4,4,4,1">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,4,4,4,1">
       <property name="spacing">
        <number>3</number>
       </property>
@@ -37,6 +37,18 @@
       </property>
       <item>
        <widget class="QLabel" name="label_2">
+        <property name="minimumSize">
+         <size>
+          <width>72</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>72</width>
+          <height>50</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">QLabel
 {

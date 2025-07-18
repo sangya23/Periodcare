@@ -1,6 +1,6 @@
 #ifndef SIGNUP_H
 #define SIGNUP_H
-
+#include "welcome.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -19,6 +19,10 @@ private slots:
     void on_createacc_clicked();
 
     void on_createaccount_clicked();
+    void on_alreadyacc_clicked();
+
+private:
+    Welcome *well;
 private:
     Ui::Signup *ui;
 };

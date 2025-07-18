@@ -1,14 +1,23 @@
 #include "forgotpwd.h"
+#include "qmessagebox.h"
 #include "ui_forgotpwd.h"
-//543#include <qstring.h>
+#include <QMessageBox>
+#include <qstring.h>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include "changepwd.h"
 forgotpwd::forgotpwd(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::forgotpwd)
 {
     ui->setupUi(this);
-    ui->emailfple->setPlaceholderText("Email address");
+    ui->recovpwdle->setPlaceholderText("Recovery key");
+    ui->emailpwdle->setPlaceholderText("Email Address");
     QIcon email(":/loginicons/emailimg.jpg");
-    ui->emailfple->addAction(email,QLineEdit::LeadingPosition);
+    QIcon passkey(":/loginicons/key.jpg");
+    ui->emailpwdle->addAction(email,QLineEdit::LeadingPosition);
+    ui->recovpwdle->addAction(passkey,QLineEdit::LeadingPosition);
 }
 
 forgotpwd::~forgotpwd()
@@ -17,9 +26,54 @@ forgotpwd::~forgotpwd()
 }
 
 
-void forgotpwd::on_buttonBox_accepted()
+void forgotpwd::on_okpb_clicked()
 {
-    QString email=ui->emailfple->text();
+    QString recoveryKey = ui->recovpwdle->text();
+    QString email=ui->emailpwdle->text();
 
+    if (recoveryKey.isEmpty()) {
+        QMessageBox::warning(nullptr, "Input Error", "Please enter your recovery key.");
+        return;
+    }
+
+    QSqlDatabase db = QSqlDatabase::database("UserInfoConnection");
+    if (!db.isOpen()) {
+        QMessageBox::critical(nullptr, "Database Error", "Database is not open!");
+        return;
+    }
+
+    QSqlQuery query(db);
+    query.prepare("SELECT email FROM userinfo WHERE email=? and passkey = ?");
+    query.addBindValue(email);
+    query.addBindValue(recoveryKey);
+
+    if (!query.exec() || !query.next()) {
+        QMessageBox::warning(nullptr, "Invalid Key", "Email Address and recovery key don't match.");
+        return;
+    }
+
+    QMessageBox::StandardButton reply = QMessageBox::question(
+        nullptr,
+        "Recovery Key Matched",
+        "Do you want to reset your password?",
+        QMessageBox::Yes | QMessageBox::No
+        );
+
+    if (reply == QMessageBox::Yes) {
+        change = new changepwd();
+        change->show();
+        } else {
+            QMessageBox::information(nullptr, "Cancelled", "Password reset was cancelled.");
+        }
+
+}
+
+
+
+
+
+void forgotpwd::on_pushButton_clicked()
+{
+    this->close();
 }
 
