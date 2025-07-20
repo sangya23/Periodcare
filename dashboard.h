@@ -1,6 +1,9 @@
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
 #include "mainwindow.h"
+#include "moodmanagement.h"
+#include "yoga.h"
+#include "sanitarycare.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -17,8 +20,16 @@ public:
 
 private slots:
     void on_pushButton_8_clicked();
+    void on_moodmgmt_clicked();
+    void on_yogapb_clicked();
+
+    void on_sanitarycarepb_clicked();
+
 private:
     MainWindow *w;
+    Moodmanagement *mood;
+    yoga *yog;
+    SanitaryCare *scare;
 private:
     Ui::Dashboard *ui;
 };

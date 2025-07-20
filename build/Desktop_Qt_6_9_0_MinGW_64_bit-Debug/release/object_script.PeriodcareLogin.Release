@@ -1,6 +1,7 @@
 release/changepwd.o
 release/dashboard.o
 release/forgotpwd.o
+release/globals.o
 release/homepage.o
 release/loginpage.o
 release/main.o
@@ -8,8 +9,14 @@ release/signup.o
 release/welcome.o
 release/editprofilewindow.o
 release/mainwindow.o
+release/moodmanagement.o
+release/moodsecond.o
+release/yoga.o
+release/sanitarycare.o
 release/qrc_Resource.o
 release/qrc_avatar.o
+release/qrc_yogarcs.o
+release/qrc_sanitary.o
 release/moc_changepwd.o
 release/moc_dashboard.o
 release/moc_forgotpwd.o
@@ -19,3 +26,7 @@ release/moc_signup.o
 release/moc_welcome.o
 release/moc_editprofilewindow.o
 release/moc_mainwindow.o
+release/moc_moodmanagement.o
+release/moc_moodsecond.o
+release/moc_yoga.o
+release/moc_sanitarycare.o

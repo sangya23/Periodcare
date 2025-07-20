@@ -1,6 +1,6 @@
 #ifndef WELCOME_H
 #define WELCOME_H
-#include "editprofilewindow.h"
+#include "mainwindow.h"
 #include "dashboard.h"
 #include <QWidget>
 
@@ -21,7 +21,7 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
-   EditProfileWindow *editprof;
+   MainWindow *mw;
     Dashboard *dashb;
 private:
     Ui::Welcome *ui;

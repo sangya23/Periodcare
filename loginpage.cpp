@@ -1,5 +1,6 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
+#include "globals.h"
 
 #include <QMessageBox>
 Loginpage::Loginpage(QWidget *parent)
@@ -49,7 +50,7 @@ void Loginpage::Login()
     }
 
     if (query.next()) {
-        QString name = query.value(0).toString();
+        currentUserEmail = email;
         dashboardWindow= new Dashboard();
         dashboardWindow->show();
         this->close();

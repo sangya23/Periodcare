@@ -12,25 +12,35 @@ SOURCES += \
     changepwd.cpp \
     dashboard.cpp \
     forgotpwd.cpp \
+    globals.cpp \
     homepage.cpp \
     loginpage.cpp \
     main.cpp \
     signup.cpp \
     welcome.cpp  \
     editprofilewindow.cpp \
-    mainwindow.cpp
+    mainwindow.cpp\
+    moodmanagement.cpp\
+    moodsecond.cpp \
+    yoga.cpp\
+    sanitarycare.cpp
 
 HEADERS += \
     changepwd.h \
     dashboard.h \
     forgotpwd.h \
+    globals.h \
     homepage.h \
     loginpage.h \
     signup.h \
     welcome.h \
     avatarutils.h \
     editprofilewindow.h \
-    mainwindow.h
+    mainwindow.h\
+    moodmanagement.h\
+    moodsecond.h \
+    yoga.h\
+    sanitarycare.h
 
 FORMS += \
     changepwd.ui \
@@ -41,7 +51,11 @@ FORMS += \
     signup.ui \
     welcome.ui \
     editprofilewindow.ui \
-    mainwindow.ui
+    mainwindow.ui\
+    moodmanagement.ui\
+    moodsecond.ui \
+    yoga.ui\
+    sanitarycare.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -53,4 +67,6 @@ DISTFILES += \
 
 RESOURCES += \
     Resource.qrc \
-    avatar.qrc
+    avatar.qrc\
+    yogarcs.qrc\
+    sanitary.qrc

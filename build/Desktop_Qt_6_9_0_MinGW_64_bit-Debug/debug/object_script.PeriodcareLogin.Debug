@@ -1,6 +1,7 @@
 debug/changepwd.o
 debug/dashboard.o
 debug/forgotpwd.o
+debug/globals.o
 debug/homepage.o
 debug/loginpage.o
 debug/main.o
@@ -8,8 +9,14 @@ debug/signup.o
 debug/welcome.o
 debug/editprofilewindow.o
 debug/mainwindow.o
+debug/moodmanagement.o
+debug/moodsecond.o
+debug/yoga.o
+debug/sanitarycare.o
 debug/qrc_Resource.o
 debug/qrc_avatar.o
+debug/qrc_yogarcs.o
+debug/qrc_sanitary.o
 debug/moc_changepwd.o
 debug/moc_dashboard.o
 debug/moc_forgotpwd.o
@@ -19,3 +26,7 @@ debug/moc_signup.o
 debug/moc_welcome.o
 debug/moc_editprofilewindow.o
 debug/moc_mainwindow.o
+debug/moc_moodmanagement.o
+debug/moc_moodsecond.o
+debug/moc_yoga.o
+debug/moc_sanitarycare.o

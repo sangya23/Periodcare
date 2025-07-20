@@ -1,6 +1,6 @@
 #include "welcome.h"
 #include "ui_welcome.h"
-#include "editprofilewindow.h"
+#include "mainwindow.h"
 #include "dashboard.h"
 Welcome::Welcome(QWidget *parent)
     : QWidget(parent)
@@ -16,8 +16,8 @@ Welcome::~Welcome()
 
 void Welcome::on_pushButton_clicked()
 {
-    editprof=new EditProfileWindow();
-    editprof->show();
+    mw=new MainWindow();
+    mw->show();
 }
 
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>615</height>
    </rect>
   </property>
   <property name="palette">
@@ -67,18 +67,24 @@
        <widget class="QLabel" name="label_3">
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>55</height>
+          <width>60</width>
+          <height>60</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
-          <height>55</height>
+          <width>60</width>
+          <height>60</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	border-image: url(:/loginicons/LOGO.jpg);
+	border-radius:30px;
+}</string>
+        </property>
         <property name="text">
-         <string>TextLabel</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -152,7 +158,14 @@ background-color: #e6769f;}
     <item row="2" column="0" colspan="2">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="welcomeLabel">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -160,14 +173,14 @@ background-color: #e6769f;}
          </size>
         </property>
         <property name="text">
-         <string>This is the place to put normal periods</string>
+         <string/>
         </property>
        </widget>
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton_7">
+         <widget class="QPushButton" name="trackerpb">
           <property name="styleSheet">
            <string notr="true">QPushButton {
     background-color: #F497B6;      
@@ -182,12 +195,12 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Tracking</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_6">
+         <widget class="QPushButton" name="moodmgmt">
           <property name="styleSheet">
            <string notr="true">QPushButton {
     background-color: #F497B6;      
@@ -202,12 +215,12 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>mood </string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_5">
+         <widget class="QPushButton" name="yogapb">
           <property name="styleSheet">
            <string notr="true">QPushButton {
     background-color: #F497B6;      
@@ -222,12 +235,12 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Yoga</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="sanitarycarepb">
           <property name="styleSheet">
            <string notr="true">QPushButton {
     background-color: #F497B6;      
@@ -242,7 +255,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Sanitary Care</string>
           </property>
          </widget>
         </item>

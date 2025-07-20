@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include "EditProfileWindow.h"
 #include "avatarutils.h"
-
+#include "globals.h"
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -111,6 +111,7 @@ void MainWindow::openAvatarSelectionDialog()
 
 void MainWindow::saveProfileToDatabase()
 {
+
     QString dbPath = "C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/user_profiles.db";
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "SaveConnection");
     db.setDatabaseName(dbPath);
@@ -121,26 +122,54 @@ void MainWindow::saveProfileToDatabase()
     }
 
     QSqlQuery query(db);
-    query.exec("CREATE TABLE IF NOT EXISTS profiles (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, surname TEXT, bio TEXT, avatar_path TEXT)");
+    query.exec("CREATE TABLE IF NOT EXISTS profiles (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, surname TEXT, bio TEXT, avatar_path TEXT, email TEXT)");
 
-    query.prepare("INSERT INTO profiles (name, surname, bio, avatar_path) VALUES (?, ?, ?, ?)");
-    query.addBindValue(ui->lineEdit_1->text());
-    query.addBindValue(ui->lineEdit_2->text());
-    query.addBindValue(ui->textEdit->toPlainText());
-    query.addBindValue(currentAvatarPath);
+    QSqlQuery checkQuery(db);
+    checkQuery.prepare("SELECT COUNT(*) FROM profiles WHERE email = ?");
+    checkQuery.addBindValue(currentUserEmail);
+
+    if (!checkQuery.exec()) {
+        qDebug() << "Email check failed:" << checkQuery.lastError().text();
+        db.close();
+        return;
+    }
+
+    bool userExists = false;
+    if (checkQuery.next()) {
+        userExists = (checkQuery.value(0).toInt() > 0);
+    }
+
+    if (userExists) {
+        query.prepare("UPDATE profiles SET name = ?, surname = ?, bio = ?, avatar_path = ? WHERE email = ?");
+        query.addBindValue(ui->lineEdit_1->text());
+        query.addBindValue(ui->lineEdit_2->text());
+        query.addBindValue(ui->textEdit->toPlainText());
+        query.addBindValue(currentAvatarPath);
+        query.addBindValue(currentUserEmail);
+    } else {
+        query.prepare("INSERT INTO profiles (name, surname, bio, avatar_path, email) VALUES (?, ?, ?, ?, ?)");
+        query.addBindValue(ui->lineEdit_1->text());
+        query.addBindValue(ui->lineEdit_2->text());
+        query.addBindValue(ui->textEdit->toPlainText());
+        query.addBindValue(currentAvatarPath);
+        query.addBindValue(currentUserEmail);
+    }
 
     if (!query.exec()) {
         qDebug() << "Save failed:" << query.lastError().text();
     } else {
-        qDebug() << "Profile saved!";
+        qDebug() << (userExists ? "Profile updated!" : "New profile inserted!");
     }
+
     db.close();
+
+
 }
 
 void MainWindow::loadProfileFromDatabase()
 {
-    QString dbPath = "H:/Project/Period/user_profiles.db";
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    QString dbPath = "C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/user_profiles.db";
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "LoadConnection");
     db.setDatabaseName(dbPath);
 
     if (!db.open()) {
@@ -148,14 +177,22 @@ void MainWindow::loadProfileFromDatabase()
         return;
     }
 
-    QSqlQuery query("SELECT name, surname, bio, avatar_path FROM profiles ORDER BY id DESC LIMIT 1");
+    QSqlQuery query(db);
+    query.prepare("SELECT name, surname, bio, avatar_path FROM profiles WHERE email = ?");
+    query.addBindValue(currentUserEmail);
+
+    if (!query.exec()) {
+        qDebug() << "Profile load query failed:" << query.lastError().text();
+    }
+
     if (query.next()) {
         ui->lineEdit_1->setText(query.value(0).toString());
         ui->lineEdit_2->setText(query.value(1).toString());
         ui->textEdit->setPlainText(query.value(2).toString());
         setCircularAvatar(query.value(3).toString());
     } else {
-        qDebug() << "No previous profile found.";
+        qDebug() << "No profile found for email:" << currentUserEmail;
     }
-        db.close();
+
+    db.close();
 }

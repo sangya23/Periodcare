@@ -36,12 +36,13 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_8;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *label;
+    QLabel *label_4;
+    QLabel *welcomeLabel;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_4;
+    QPushButton *trackerpb;
+    QPushButton *moodmgmt;
+    QPushButton *yogapb;
+    QPushButton *sanitarycarepb;
     QPushButton *pushButton_3;
     QSpacerItem *verticalSpacer;
     QMenuBar *menubar;
@@ -51,7 +52,7 @@ public:
     {
         if (Dashboard->objectName().isEmpty())
             Dashboard->setObjectName("Dashboard");
-        Dashboard->resize(800, 600);
+        Dashboard->resize(800, 615);
         QPalette palette;
         QBrush brush(QColor(247, 198, 217, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -68,8 +69,12 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setMinimumSize(QSize(0, 55));
-        label_3->setMaximumSize(QSize(16777215, 55));
+        label_3->setMinimumSize(QSize(60, 60));
+        label_3->setMaximumSize(QSize(60, 60));
+        label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"	border-image: url(:/loginicons/LOGO.jpg);\n"
+"	border-radius:30px;\n"
+"}"));
 
         horizontalLayout->addWidget(label_3);
 
@@ -114,17 +119,22 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setMinimumSize(QSize(0, 500));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName("label_4");
 
-        horizontalLayout_2->addWidget(label);
+        horizontalLayout_2->addWidget(label_4);
+
+        welcomeLabel = new QLabel(centralwidget);
+        welcomeLabel->setObjectName("welcomeLabel");
+        welcomeLabel->setMinimumSize(QSize(0, 500));
+
+        horizontalLayout_2->addWidget(welcomeLabel);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
-        pushButton_7 = new QPushButton(centralwidget);
-        pushButton_7->setObjectName("pushButton_7");
-        pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        trackerpb = new QPushButton(centralwidget);
+        trackerpb->setObjectName("trackerpb");
+        trackerpb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -136,11 +146,11 @@ public:
 "background-color: #e6769f;}\n"
 ""));
 
-        verticalLayout->addWidget(pushButton_7);
+        verticalLayout->addWidget(trackerpb);
 
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        moodmgmt = new QPushButton(centralwidget);
+        moodmgmt->setObjectName("moodmgmt");
+        moodmgmt->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -152,11 +162,11 @@ public:
 "background-color: #e6769f;}\n"
 ""));
 
-        verticalLayout->addWidget(pushButton_6);
+        verticalLayout->addWidget(moodmgmt);
 
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        yogapb = new QPushButton(centralwidget);
+        yogapb->setObjectName("yogapb");
+        yogapb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -168,11 +178,11 @@ public:
 "background-color: #e6769f;}\n"
 ""));
 
-        verticalLayout->addWidget(pushButton_5);
+        verticalLayout->addWidget(yogapb);
 
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        sanitarycarepb = new QPushButton(centralwidget);
+        sanitarycarepb->setObjectName("sanitarycarepb");
+        sanitarycarepb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -184,7 +194,7 @@ public:
 "background-color: #e6769f;}\n"
 ""));
 
-        verticalLayout->addWidget(pushButton_4);
+        verticalLayout->addWidget(sanitarycarepb);
 
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName("pushButton_3");
@@ -229,14 +239,15 @@ public:
     void retranslateUi(QMainWindow *Dashboard)
     {
         Dashboard->setWindowTitle(QCoreApplication::translate("Dashboard", "MainWindow", nullptr));
-        label_3->setText(QCoreApplication::translate("Dashboard", "TextLabel", nullptr));
+        label_3->setText(QString());
         label_2->setText(QCoreApplication::translate("Dashboard", "WELCOME TO PERIOD", nullptr));
         pushButton_8->setText(QCoreApplication::translate("Dashboard", "Profile", nullptr));
-        label->setText(QCoreApplication::translate("Dashboard", "This is the place to put normal periods", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("Dashboard", "PushButton", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("Dashboard", "PushButton", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("Dashboard", "PushButton", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("Dashboard", "PushButton", nullptr));
+        label_4->setText(QCoreApplication::translate("Dashboard", "TextLabel", nullptr));
+        welcomeLabel->setText(QString());
+        trackerpb->setText(QCoreApplication::translate("Dashboard", "Tracking", nullptr));
+        moodmgmt->setText(QCoreApplication::translate("Dashboard", "mood ", nullptr));
+        yogapb->setText(QCoreApplication::translate("Dashboard", "Yoga", nullptr));
+        sanitarycarepb->setText(QCoreApplication::translate("Dashboard", "Sanitary Care", nullptr));
         pushButton_3->setText(QCoreApplication::translate("Dashboard", "PushButton", nullptr));
     } // retranslateUi
 

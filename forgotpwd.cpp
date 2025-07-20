@@ -7,6 +7,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include "changepwd.h"
+#include "globals.h"
 forgotpwd::forgotpwd(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::forgotpwd)
@@ -60,10 +61,13 @@ void forgotpwd::on_okpb_clicked()
         );
 
     if (reply == QMessageBox::Yes) {
+        currentUserEmail=email;
         change = new changepwd();
         change->show();
+        this->close();
         } else {
             QMessageBox::information(nullptr, "Cancelled", "Password reset was cancelled.");
+            this->close();
         }
 
 }

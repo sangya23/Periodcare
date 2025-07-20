@@ -15,6 +15,9 @@ public:
     explicit changepwd(QWidget *parent = nullptr);
     ~changepwd();
 
+private slots:
+    void on_okcp_clicked();
+
 private:
     Ui::changepwd *ui;
 };

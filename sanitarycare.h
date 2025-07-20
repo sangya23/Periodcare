@@ -1,6 +1,5 @@
 #ifndef SANITARYCARE_H
 #define SANITARYCARE_H
-
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE

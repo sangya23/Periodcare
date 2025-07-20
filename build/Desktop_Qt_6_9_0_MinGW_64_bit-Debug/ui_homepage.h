@@ -17,9 +17,9 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,9 +36,9 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *loginpb;
     QHBoxLayout *horizontalLayout_4;
-    QLabel *label;
-    QSpacerItem *horizontalSpacer_3;
-    QTextBrowser *textBrowser;
+    QSpacerItem *verticalSpacer;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -67,24 +67,25 @@ public:
         horizontalLayout->setSizeConstraint(QLayout::SizeConstraint::SetMinAndMaxSize);
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
-        label_2->setMinimumSize(QSize(72, 50));
-        label_2->setMaximumSize(QSize(72, 50));
+        label_2->setEnabled(true);
+        label_2->setMinimumSize(QSize(60, 60));
+        label_2->setMaximumSize(QSize(60, 60));
         label_2->setStyleSheet(QString::fromUtf8("QLabel\n"
 "{\n"
-"border-image: url(:/loginicons/515858058_1680459882674160_7226127355213665687_n.jpg);\n"
-"border-radius:5px;\n"
+"	border-image: url(:/loginicons/LOGO.jpg);\n"
+"	border-radius:25px;\n"
 "}"));
 
         horizontalLayout->addWidget(label_2);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(40, 60, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setMinimumSize(QSize(75, 50));
-        label_3->setMaximumSize(QSize(75, 50));
+        label_3->setMinimumSize(QSize(75, 60));
+        label_3->setMaximumSize(QSize(75, 60));
 
         horizontalLayout->addWidget(label_3);
 
@@ -110,7 +111,7 @@ public:
         horizontalLayout->addWidget(loginpb);
 
         horizontalLayout->setStretch(1, 4);
-        horizontalLayout->setStretch(2, 4);
+        horizontalLayout->setStretch(2, 5);
         horizontalLayout->setStretch(3, 4);
         horizontalLayout->setStretch(4, 1);
 
@@ -118,32 +119,20 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName("horizontalLayout_4");
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("QLabel\n"
-"{\n"
-" border-radius:20px;\n"
-"\n"
-"	border-image: url(:/loginicons/periodsimg2.jpg);\n"
-"}"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        horizontalLayout_4->addWidget(label);
+        horizontalLayout_4->addItem(verticalSpacer);
 
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        scrollArea = new QScrollArea(centralwidget);
+        scrollArea->setObjectName("scrollArea");
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 760, 482));
+        scrollArea->setWidget(scrollAreaWidgetContents);
 
-        horizontalLayout_4->addItem(horizontalSpacer_3);
+        horizontalLayout_4->addWidget(scrollArea);
 
-        textBrowser = new QTextBrowser(centralwidget);
-        textBrowser->setObjectName("textBrowser");
-        textBrowser->setStyleSheet(QString::fromUtf8("QTextBrowser\n"
-"{\n"
-"border-radius:20px;\n"
-"padding:6px 6px;\n"
-"}"));
-
-        horizontalLayout_4->addWidget(textBrowser, 0, Qt::AlignmentFlag::AlignHCenter);
-
-        horizontalLayout_4->setStretch(0, 3);
 
         gridLayout_2->addLayout(horizontalLayout_4, 1, 0, 1, 1);
 
@@ -167,20 +156,6 @@ public:
         label_2->setText(QString());
         label_3->setText(QCoreApplication::translate("Homepage", "\360\237\214\270PeriodCare\360\237\214\270", nullptr));
         loginpb->setText(QCoreApplication::translate("Homepage", "Login", nullptr));
-        label->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("Homepage", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\360\237\214\270The features that we have are as followsssssss:\360\237\214\270</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">a tracker</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">a mood log</p>\n"
-"<p style=\" margin-top:0px; margin-bo"
-                        "ttom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Yoga poses </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">faowe</p></body></html>", nullptr));
     } // retranslateUi
 
 };

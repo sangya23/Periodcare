@@ -29,16 +29,22 @@ public:
         if (Welcome->objectName().isEmpty())
             Welcome->setObjectName("Welcome");
         Welcome->resize(712, 419);
+        Welcome->setStyleSheet(QString::fromUtf8("background-color: rgb(211, 207, 255);"));
         label = new QLabel(Welcome);
         label->setObjectName("label");
-        label->setGeometry(QRect(240, 110, 191, 121));
+        label->setGeometry(QRect(280, 90, 271, 121));
         pushButton = new QPushButton(Welcome);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 360, 121, 31));
+        pushButton->setGeometry(QRect(180, 350, 141, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("border-radius:15px;\n"
+"background-color: rgb(170, 170, 255);\n"
+""));
         pushButton_2 = new QPushButton(Welcome);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(510, 360, 121, 31));
-        pushButton_2->setStyleSheet(QString::fromUtf8(""));
+        pushButton_2->setGeometry(QRect(370, 350, 121, 31));
+        pushButton_2->setStyleSheet(QString::fromUtf8("border-radius:15px;\n"
+"background-color: rgb(170, 170, 255);\n"
+""));
 
         retranslateUi(Welcome);
 

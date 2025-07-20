@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>moodsecond</class>
+ <widget class="QMainWindow" name="moodsecond">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1577</width>
+    <height>1011</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+       stop: 0 #f7c6d9,  
+       stop: 1 #e6e6fa
+    );
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>991</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    background-color: #F497B6;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Log in your mood:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>100</y>
+      <width>341</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+    background-color: #F497B6;      
+    color: #3D3D3D;                   
+    font: bold 14px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>None</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Anxious</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Overwhelmed</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Irritated</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Confused</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Normal</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sad</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Feeling low</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>641</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    background-color: #F497B6;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>How are you feeling:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>641</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    background-color: #F497B6;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Select your symptoms:</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>150</y>
+      <width>341</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextBrowser{
+    background-color: #F497B6;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="cramps">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>160</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: black;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Cramps</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="nausea">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>200</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Nausea</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="backpain">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>240</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Back pain</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="tiredness">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>320</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Tiredness</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="headache">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>280</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Headache</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="bloating">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>360</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Bloating</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="acne">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>400</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Acne</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="tenderness">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>440</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox
+{
+color: #000000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Breast Tenderness</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>510</y>
+      <width>141</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton
+{
+    background-color: #F497B6;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+QPushButton:hover
+{
+background-color: #e6769f;}
+</string>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>30</y>
+      <width>161</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 100px;</string>
+    </property>
+    <property name="text">
+     <string>☺️</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>1240</x>
+      <y>170</y>
+      <width>161</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:100px;</string>
+    </property>
+    <property name="text">
+     <string>😠</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>290</y>
+      <width>181</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:100px;</string>
+    </property>
+    <property name="text">
+     <string> 😖</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>430</y>
+      <width>171</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:100px;</string>
+    </property>
+    <property name="text">
+     <string>😞</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

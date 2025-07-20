@@ -7,6 +7,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QRegularExpression>
+#include "globals.h"
 
 bool isPasswordStrong(const QString &password) {
     static QRegularExpression passwordRegex("^(?=.*[A-Z])(?=.*[\\W_]).{8,}$");
@@ -76,7 +77,6 @@ void Signup::on_createacc_clicked()
             return;
         }
 
-    // Step 1: Check for existing email
     QSqlQuery checkQuery(db);
     checkQuery.prepare("SELECT COUNT(*) FROM userinfo WHERE email = ?");
     checkQuery.addBindValue(email);
@@ -102,6 +102,7 @@ void Signup::on_createacc_clicked()
     if (!insertQuery.exec()) {
         QMessageBox::critical(nullptr, "Database Error", "Failed to insert new user: " + insertQuery.lastError().text());
     } else {
+        currentUserEmail=email;
         QMessageBox::information(nullptr, "Success", "Account created successfully!");
         well=new Welcome();
         well->show();
