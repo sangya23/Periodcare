@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui widgets sql charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,7 +23,10 @@ SOURCES += \
     moodmanagement.cpp\
     moodsecond.cpp \
     yoga.cpp\
-    sanitarycare.cpp
+    sanitarycare.cpp\
+    nutrients.cpp\
+    calendar.cpp \
+    periodcalendar.cpp
 
 HEADERS += \
     changepwd.h \
@@ -40,7 +43,10 @@ HEADERS += \
     moodmanagement.h\
     moodsecond.h \
     yoga.h\
-    sanitarycare.h
+    sanitarycare.h\
+    nutrients.h\
+    calendar.h \
+    periodcalendar.h
 
 FORMS += \
     changepwd.ui \
@@ -55,15 +61,14 @@ FORMS += \
     moodmanagement.ui\
     moodsecond.ui \
     yoga.ui\
-    sanitarycare.ui
+    sanitarycare.ui\
+    nutrients.ui\
+    form.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-DISTFILES += \
-    ../../../../../Downloads/user.png
 
 RESOURCES += \
     Resource.qrc \

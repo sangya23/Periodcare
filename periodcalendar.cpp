@@ -1,6 +1,7 @@
 #include "periodcalendar.h"
 #include "ui_form.h"
 #include "calendar.h"
+#include "globals.h"
 #include <QPushButton>
 #include <QMessageBox>
 #include <QSqlQuery>
@@ -55,8 +56,7 @@ PeriodCalendar::~PeriodCalendar() {
 }
 
 bool PeriodCalendar::openDatabase() {
-    db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("tracker.db");
+    db = QSqlDatabase::database("UserConnection");
     if (!db.open()) {
         qDebug() << "Error opening database:" << db.lastError().text();
         return false;
@@ -67,7 +67,7 @@ bool PeriodCalendar::openDatabase() {
 
 void PeriodCalendar::createTable() {
     QSqlQuery query(db);
-    if (!query.exec("CREATE TABLE IF NOT EXISTS periods (date TEXT PRIMARY KEY)")) {
+    if (!query.exec("CREATE TABLE IF NOT EXISTS periods (email TEXT, date TEXT)")) {
         qDebug() << "Error creating table:" << query.lastError().text();
     } else {
         qDebug() << "Table 'periods' checked/created successfully.";
@@ -77,8 +77,10 @@ void PeriodCalendar::createTable() {
 void PeriodCalendar::loadPeriodData() {
     periodDates.clear();
     QSqlQuery query(db);
+    query.prepare("SELECT date FROM periods WHERE email = :email ORDER BY date ASC");
+    query.bindValue(":email", currentUserEmail);
 
-    if (!query.exec("SELECT date FROM periods ORDER BY date ASC")) {
+    if (!query.exec()) {
         qDebug() << "Error loading period data:" << query.lastError().text();
         QMessageBox::critical(this, "Database Error", "Failed to load period data from database.");
         return;
@@ -88,7 +90,8 @@ void PeriodCalendar::loadPeriodData() {
         QDate d = QDate::fromString(query.value(0).toString(), Qt::ISODate);
         if (d.isValid()) periodDates.append(d);
     }
-    qDebug() << "Loaded" << periodDates.size() << "period entries.";
+
+    qDebug() << "Loaded" << periodDates.size() << "period entries for" << currentUserEmail;
 
     updatePredictions();
     updateCalendarHighlights();
@@ -108,7 +111,8 @@ void PeriodCalendar::removeDate() {
     }
 
     QSqlQuery query(db);
-    query.prepare("DELETE FROM periods WHERE date = :date");
+    query.prepare("DELETE FROM periods WHERE email = :email AND date = :date");
+    query.bindValue(":email", currentUserEmail);
     query.bindValue(":date", selected.toString(Qt::ISODate));
 
     if (query.exec()) {
@@ -135,7 +139,8 @@ void PeriodCalendar::logPeriod() {
     }
 
     QSqlQuery query(db);
-    query.prepare("INSERT INTO periods (date) VALUES (:date)");
+    query.prepare("INSERT INTO periods (email, date) VALUES (:email, :date)");
+    query.bindValue(":email", currentUserEmail);
     query.bindValue(":date", selectedDate.toString(Qt::ISODate));
 
     if (!query.exec()) {

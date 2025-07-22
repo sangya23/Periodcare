@@ -5,12 +5,12 @@
 #include <QDebug>
 
 void connectToDatabase() {
-    if (QSqlDatabase::contains("UserInfoConnection")) {
-        return; // Connection already exists
+    if (QSqlDatabase::contains("UserConnection")) {
+        return;
     }
 
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "UserInfoConnection");
-    db.setDatabaseName("C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/userinfo.db");
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "UserConnection");
+    db.setDatabaseName("C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/periodcare.db");
 
     if (!db.open()) {
         qDebug() << "Failed to open database:" << db.lastError().text();
@@ -23,8 +23,8 @@ void connectToDatabase() {
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-   connectToDatabase();
-   Homepage h;
+    connectToDatabase();
+    Homepage h;
     h.show();
     return a.exec();
 }

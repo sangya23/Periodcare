@@ -39,6 +39,7 @@ public:
     QSpacerItem *verticalSpacer;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
+    QWidget *widget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -46,7 +47,7 @@ public:
     {
         if (Homepage->objectName().isEmpty())
             Homepage->setObjectName("Homepage");
-        Homepage->resize(800, 600);
+        Homepage->resize(1478, 1020);
         Homepage->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "    background: qlineargradient(\n"
 "        x1: 0, y1: 0, x2: 1, y2: 1,\n"
@@ -128,7 +129,10 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 760, 482));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1438, 902));
+        widget = new QWidget(scrollAreaWidgetContents);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(10, 10, 741, 461));
         scrollArea->setWidget(scrollAreaWidgetContents);
 
         horizontalLayout_4->addWidget(scrollArea);
@@ -139,7 +143,7 @@ public:
         Homepage->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Homepage);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 18));
+        menubar->setGeometry(QRect(0, 0, 1478, 18));
         Homepage->setMenuBar(menubar);
         statusbar = new QStatusBar(Homepage);
         statusbar->setObjectName("statusbar");

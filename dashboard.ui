@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>615</height>
+    <width>1503</width>
+    <height>1020</height>
    </rect>
   </property>
   <property name="palette">
@@ -260,7 +260,7 @@ background-color: #e6769f;}
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="nutripb">
           <property name="styleSheet">
            <string notr="true">QPushButton {
     background-color: #F497B6;      
@@ -275,7 +275,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Nutrients</string>
           </property>
          </widget>
         </item>
@@ -306,7 +306,7 @@ background-color: #e6769f;}
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1503</width>
      <height>18</height>
     </rect>
    </property>

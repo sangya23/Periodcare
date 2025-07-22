@@ -3,8 +3,10 @@
 #include "mainwindow.h"
 #include "moodmanagement.h"
 #include "yoga.h"
+#include "nutrients.h"
 #include "globals.h"
 #include "sanitarycare.h"
+#include "periodcalendar.h"
 Dashboard::Dashboard(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Dashboard)
@@ -44,5 +46,19 @@ void Dashboard::on_sanitarycarepb_clicked()
 {
     scare=new SanitaryCare;
     scare->show();
+}
+
+
+void Dashboard::on_nutripb_clicked()
+{
+    nutri=new nutrients();
+    nutri->show();
+}
+
+
+void Dashboard::on_trackerpb_clicked()
+{
+    track=new PeriodCalendar();
+    track->show();
 }
 

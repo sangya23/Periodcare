@@ -13,6 +13,9 @@ release/moodmanagement.o
 release/moodsecond.o
 release/yoga.o
 release/sanitarycare.o
+release/nutrients.o
+release/calendar.o
+release/periodcalendar.o
 release/qrc_Resource.o
 release/qrc_avatar.o
 release/qrc_yogarcs.o
@@ -30,3 +33,6 @@ release/moc_moodmanagement.o
 release/moc_moodsecond.o
 release/moc_yoga.o
 release/moc_sanitarycare.o
+release/moc_nutrients.o
+release/moc_calendar.o
+release/moc_periodcalendar.o

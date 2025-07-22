@@ -111,10 +111,7 @@ void MainWindow::openAvatarSelectionDialog()
 
 void MainWindow::saveProfileToDatabase()
 {
-
-    QString dbPath = "C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/user_profiles.db";
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "SaveConnection");
-    db.setDatabaseName(dbPath);
+    QSqlDatabase db = QSqlDatabase::database("UserConnection");
 
     if (!db.open()) {
         qDebug() << "Failed to open DB for save:" << db.lastError().text();
@@ -168,9 +165,7 @@ void MainWindow::saveProfileToDatabase()
 
 void MainWindow::loadProfileFromDatabase()
 {
-    QString dbPath = "C:/Users/sangy/OneDrive/Desktop/Period/Periodcare/user_profiles.db";
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "LoadConnection");
-    db.setDatabaseName(dbPath);
+   QSqlDatabase db = QSqlDatabase::database("UserConnection");
 
     if (!db.open()) {
         qDebug() << "DB Load Error:" << db.lastError().text();

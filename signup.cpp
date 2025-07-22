@@ -48,7 +48,7 @@ Signup::~Signup()
 
 void Signup::on_createacc_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::database("UserInfoConnection");  // Get shared connection
+    QSqlDatabase db = QSqlDatabase::database("UserConnection");
 
     if (!db.isOpen()) {
         QMessageBox::warning(nullptr, "Error", "Database is not open!");

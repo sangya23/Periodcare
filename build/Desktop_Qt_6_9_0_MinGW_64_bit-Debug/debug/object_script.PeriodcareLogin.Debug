@@ -13,6 +13,9 @@ debug/moodmanagement.o
 debug/moodsecond.o
 debug/yoga.o
 debug/sanitarycare.o
+debug/nutrients.o
+debug/calendar.o
+debug/periodcalendar.o
 debug/qrc_Resource.o
 debug/qrc_avatar.o
 debug/qrc_yogarcs.o
@@ -30,3 +33,6 @@ debug/moc_moodmanagement.o
 debug/moc_moodsecond.o
 debug/moc_yoga.o
 debug/moc_sanitarycare.o
+debug/moc_nutrients.o
+debug/moc_calendar.o
+debug/moc_periodcalendar.o

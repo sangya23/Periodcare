@@ -43,7 +43,7 @@ public:
     QPushButton *moodmgmt;
     QPushButton *yogapb;
     QPushButton *sanitarycarepb;
-    QPushButton *pushButton_3;
+    QPushButton *nutripb;
     QSpacerItem *verticalSpacer;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -52,7 +52,7 @@ public:
     {
         if (Dashboard->objectName().isEmpty())
             Dashboard->setObjectName("Dashboard");
-        Dashboard->resize(800, 615);
+        Dashboard->resize(1503, 1020);
         QPalette palette;
         QBrush brush(QColor(247, 198, 217, 255));
         brush.setStyle(Qt::BrushStyle::SolidPattern);
@@ -196,9 +196,9 @@ public:
 
         verticalLayout->addWidget(sanitarycarepb);
 
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        nutripb = new QPushButton(centralwidget);
+        nutripb->setObjectName("nutripb");
+        nutripb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -210,7 +210,7 @@ public:
 "background-color: #e6769f;}\n"
 ""));
 
-        verticalLayout->addWidget(pushButton_3);
+        verticalLayout->addWidget(nutripb);
 
 
         horizontalLayout_2->addLayout(verticalLayout);
@@ -225,7 +225,7 @@ public:
         Dashboard->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Dashboard);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 18));
+        menubar->setGeometry(QRect(0, 0, 1503, 18));
         Dashboard->setMenuBar(menubar);
         statusbar = new QStatusBar(Dashboard);
         statusbar->setObjectName("statusbar");
@@ -248,7 +248,7 @@ public:
         moodmgmt->setText(QCoreApplication::translate("Dashboard", "mood ", nullptr));
         yogapb->setText(QCoreApplication::translate("Dashboard", "Yoga", nullptr));
         sanitarycarepb->setText(QCoreApplication::translate("Dashboard", "Sanitary Care", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Dashboard", "PushButton", nullptr));
+        nutripb->setText(QCoreApplication::translate("Dashboard", "Nutrients", nullptr));
     } // retranslateUi
 
 };

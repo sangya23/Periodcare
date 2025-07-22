@@ -1,7 +1,6 @@
 #include "editprofilewindow.h"
 #include "ui_editprofilewindow.h"
 #include "avatarutils.h"
-
 #include <QDialog>
 #include <QPushButton>
 #include <QGridLayout>

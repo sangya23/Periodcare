@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1478</width>
+    <height>1020</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -167,8 +167,8 @@ background-color: #e6769f;}</string>
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>760</width>
-           <height>482</height>
+           <width>1438</width>
+           <height>902</height>
           </rect>
          </property>
          <widget class="QWidget" name="widget" native="true">
@@ -193,7 +193,7 @@ background-color: #e6769f;}</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1478</width>
      <height>18</height>
     </rect>
    </property>

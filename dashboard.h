@@ -4,6 +4,8 @@
 #include "moodmanagement.h"
 #include "yoga.h"
 #include "sanitarycare.h"
+#include "nutrients.h"
+#include "periodcalendar.h"
 #include <QMainWindow>
 
 namespace Ui {
@@ -25,11 +27,18 @@ private slots:
 
     void on_sanitarycarepb_clicked();
 
+    void on_nutripb_clicked();
+
+    void on_trackerpb_clicked();
+
 private:
     MainWindow *w;
     Moodmanagement *mood;
     yoga *yog;
     SanitaryCare *scare;
+    nutrients *nutri;
+    PeriodCalendar *track;
+
 private:
     Ui::Dashboard *ui;
 };
