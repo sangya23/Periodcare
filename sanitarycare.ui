@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SanitaryCare</class>
+ <widget class="QMainWindow" name="SanitaryCare">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1503</width>
+    <height>1020</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SanitaryCare</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(244, 154, 186);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(244, 154, 186);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLabel" name="SanitaryCare_title">
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>30</y>
+         <width>261</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background-color: rgb(254, 227, 220);
+	font: 18pt &quot;Source Code Pro&quot;;
+	border: 2px solid indianred;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+  </string>
+       </property>
+       <property name="text">
+        <string>Sanitary Care</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="SanitaryPads">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>130</y>
+         <width>301</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background-color: rgb(255, 255, 255);
+	font: 700 12pt &quot;Source Code Pro&quot;;
+	border: 2px ;
+    border-radius: 10px;
+    padding: 4px 5px;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Sanitary Pads</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="MenstrualCups">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>130</y>
+         <width>221</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background-color: rgb(255, 255, 255);
+	font: 700 12pt &quot;Source Code Pro&quot;;
+	border: 2px ;
+    border-radius: 10px;
+    padding: 4px 5px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Menstrual Cups</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="PeriodUnderwear">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>130</y>
+         <width>261</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	background-color: rgb(255, 255, 255);
+	font: 700 12pt &quot;Source Code Pro&quot;;
+	border: 2px ;
+    border-radius: 10px;
+    padding: 4px 5px;
+}</string>
+       </property>
+       <property name="text">
+        <string>Period Underwear</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>370</y>
+         <width>331</width>
+         <height>341</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="Blank_1">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(244, 154, 186);</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="widget_1">
+        <widget class="QLabel" name="Whisper_title">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>331</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+</string>
+         </property>
+         <property name="text">
+          <string>Whisper</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="W_text">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>331</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Whisper is one of the most widely recognized sanitary pad brands in Nepal. It offers various options like Ultra Clean, Bindazzz Nights, and Maxi Fit.
+
+Price Range: NPR 50 to NPR 180+ depending on variant and pack size.
+
+Availability: Easily available in supermarkets like Bhat-Bhateni, local pharmacy.</string>
+         </property>
+         <property name="centerOnScroll">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="img_whisper">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>140</y>
+           <width>331</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="sanitary.qrc">:/sanitary_image/Whisper.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="widget_2">
+        <widget class="QLabel" name="Softy_title">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>331</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+</string>
+         </property>
+         <property name="text">
+          <string>Softy</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="img_Softy">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>130</y>
+           <width>331</width>
+           <height>211</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="sanitary.qrc">:/sanitary_image/Softy.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>331</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Softy is a budget-friendly sanitary pad brand locally manufactured in Nepal. It’s known for its affordability and decent absorbency for daily use.
+
+Price Range: NPR 60 to NPR 100+ depending on pack size.
+
+Availability: Commonly found in local medical stores, supermarkets.</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="widget_3">
+        <widget class="QLabel" name="Nine">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>331</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+</string>
+         </property>
+         <property name="text">
+          <string>Nine</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>331</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Nine is a premium organic sanitary pad brand focused on eco-friendliness and comfort. Made with biodegradable materials, it's gentle on sensitive skin sustainable choice for your period. It provides free biodegradable bags.
+
+Price Range: NPR 100 to NPR 300 depending on the variety and packs.
+
+Availability: They are available in supermarkets.</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="img_nine">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>140</y>
+           <width>331</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="sanitary.qrc">:/sanitary_image/Nine.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="widget_4">
+        <widget class="QLabel" name="Padelux">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>331</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+</string>
+         </property>
+         <property name="text">
+          <string>Padelux</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="img_padelux">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>140</y>
+           <width>331</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: white;
+border: 1px solid black;
+padding: 2px;
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="sanitary.qrc">:/sanitary_image/paddelux.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit_padelux">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>331</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Padelux is a relatively newer brand in the Nepali market, offering pads with wings and comfortable cotton feel.
+
+Price Range: NPR 40 to NPR 150+ depending on type and packs.
+
+Availability: Found in local shops, supermarkets. </string>
+         </property>
+        </widget>
+        <zorder>Padelux</zorder>
+        <zorder>plainTextEdit_padelux</zorder>
+        <zorder>img_padelux</zorder>
+       </widget>
+      </widget>
+      <widget class="QListWidget" name="listWidget_Pads">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>210</y>
+         <width>301</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>---Select Brands---</string>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Whisper</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Softy</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Nine</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Padelux</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Tip: Choose based on your flow and skin comfort...
+</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QListWidget" name="listWidget_MenstrualCup">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>210</y>
+         <width>221</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>---Select Brands---</string>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Pee Safe</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Glow Getter</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+      </widget>
+      <widget class="QStackedWidget" name="stackedWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>500</x>
+         <y>370</y>
+         <width>221</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="Blank_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(244, 154, 186);</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="PeeSafe">
+        <widget class="QLabel" name="PeeSafe_title">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>221</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>PeeSafe Nepal</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>221</width>
+           <height>191</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Pee Safe offers a wide range of  menstrual hygiene products including menstrual cups, pads, tampons, and cramp relief roll-ons. They focus on safe, toxin-free products for intimate  care.  </string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_igPeeSafe">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>130</y>
+           <width>201</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;a href = &quot;https://www.instagram.com/peesafenepal/&quot;&gt;Instagram: 
+PeeSafe Nepal&lt;/a&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::RichText</enum>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_dPeeSafe">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>160</y>
+           <width>201</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;a href = &quot;https://www.daraz.com.np/products/pee-safe-reusable-menstrual-cup-with-medical-grade-silicone-for-women-small-i103354680-s1024081798.html?spm=a2a0e.8553159.0.0.3aab8d47t4Aolm&amp;search=store&quot;&gt;Daraz: PeeSafe Nepal&lt;/a&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::RichText</enum>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="GlowGetter">
+        <widget class="QLabel" name="Glowgetter">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>221</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Glow Getter</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>221</width>
+           <height>191</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Glow Getter promotes period positivity through their menstrual cups and wellness prodcuts. It is focused on self-care, eco-consciousness, and women's empowerment. It offers begineer-friendly menstrual cups in various different sizes.</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_iGLow">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>191</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;a href=&quot;https://www.instagram.com/glow_getter_flow_cup/&quot;&gt;Instagram: Glow Getter&lt;/a&gt;
+</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::RichText</enum>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QStackedWidget" name="stackedWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>370</y>
+         <width>261</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="Blank_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(244, 154, 186);</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="Flowy">
+        <widget class="QLabel" name="flowy">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>261</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Flowy</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>261</width>
+           <height>191</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>Flowy is a Nepali brand that offers eco-friendly, reusable period underwear. Designed for comfort, leak-proof protection, and breathability. Perfect for those seeking a sustainable, waste-free period solution.</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="igflow">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>241</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;a href =&quot;https://www.instagram.com/flowy.np/&quot;&gt;Instagram: Flowy&lt;/a&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::RichText</enum>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="daraz">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>241</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.daraz.com.np/shop/flowy-venture-pvt-ltd&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0e4357;&quot;&gt;Daraz: Flowy&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::TextFormat::RichText</enum>
+         </property>
+         <property name="openExternalLinks">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Wuka">
+        <widget class="QLabel" name="wuka">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>261</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Wuka</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QPlainTextEdit" name="plainTextEdit_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>261</width>
+           <height>191</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="plainText">
+          <string>WUKA Nepal offers eco-friendly and reusable menstrual products, mainly period underwear, within the Nepali market.
+WUKA period panties are washable, long-lasting. They are available online via its Instagram page and Daraz.
+</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="darazwuka">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>160</y>
+           <width>241</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>&lt;a href=&quot;https://www.daraz.com.np/shop/wuka/&quot;&gt;Daraz: WukaNepal&lt;/a&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="igwuka">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>130</y>
+           <width>241</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&lt;a href= &quot;https://www.instagram.com/wukanepal/&quot;&gt;Instagram: WukaNepal&lt;/a&gt;</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QListWidget" name="listWidget_PeriodUnderwear">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>210</y>
+         <width>261</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>---Select Brands---</string>
+        </property>
+        <property name="font">
+         <font>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Flowy</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Wuka</string>
+        </property>
+        <property name="icon">
+         <iconset theme="QIcon::ThemeIcon::MediaRecord"/>
+        </property>
+       </item>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1503</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="sanitary.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>listWidget_Pads</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>378</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>177</x>
+     <y>402</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget_PeriodUnderwear</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget_3</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>815</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>779</x>
+     <y>435</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget_MenstrualCup</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget_2</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>474</x>
+     <y>285</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>483</x>
+     <y>430</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

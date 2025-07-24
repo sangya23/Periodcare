@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>nutrients</class>
+ <widget class="QMainWindow" name="nutrients">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1651</width>
+    <height>987</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>nutrients</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    
+	background-color: rgb(255, 170, 127);
+    
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>70</y>
+      <width>421</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 127);
+       
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Nutrients</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>60</y>
+      <width>401</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 127);
+   
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+</string>
+    </property>
+    <property name="text">
+     <string>Ayurveda and Medicines</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>210</y>
+      <width>431</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 127);
+    
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>SELECT</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>false</italic>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset theme="QIcon::ThemeIcon::EditFind"/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Iron enriched food</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Magnesium enrich food</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Omega-3 Fatty Acids</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Vitamin B6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Calcium</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Vitamin D</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string> Water</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>470</y>
+      <width>411</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+    background-color: #bd49c86;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Blank"/>
+    <widget class="QWidget" name="I">
+     <widget class="QPlainTextEdit" name="Iron">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>34</y>
+        <width>341</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Blood loss can lower iron levels which may lead to fatigue and anemia
+Food We must intake:
+Spinach, lentils, beans, kale, fortified cereal
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Magnesium">
+     <widget class="QPlainTextEdit" name="magnsium">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>341</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Helps relax muscles, reduces cramps and improves the mood
+Food We must intake:
+Nuts and seeds especially almonds, pumpkins
+Dark chocolates, avocados, whole grains
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="omega">
+     <widget class="QPlainTextEdit" name="omega_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>371</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="plainText">
+       <string>Helps reduce cramps and breast tenderness
+Food We must intake:
+soaked chia seeds , flax seeds
+walnuts, fatty fish like salmon and sardines
+
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="b6">
+     <widget class="QPlainTextEdit" name="vitaminb6">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>391</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="plainText">
+       <string>It helps to cope with bloating, irritability and also mood swings
+Food We must intake:
+Bananas, potatoes, chickpeas, poultry meats as well as fortified cereals
+
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="calcium">
+     <widget class="QPlainTextEdit" name="calci">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>34</y>
+        <width>341</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Helps reduce menstrual pain, bloating and mood swings
+Food We must intake:
+dairy products, leafy greens, almonds, tofu</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="D">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="geometry">
+       <rect>
+        <x>23</x>
+        <y>34</y>
+        <width>351</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>It works with calcium to reduce PMS symptoms and inflammation
+Morning sunlight is a major source of Vitamin D
+Food We must intake:
+orange juices, milk, fatty fishes</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="water">
+     <widget class="QPlainTextEdit" name="water_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>351</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Warm water helps reduce bloating and enough intake of water keeps you hydrated to reduce fatigue
+Herbal teas like ginger or peppermint soothes the cramp.
+
+</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QListWidget" name="listWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>210</y>
+      <width>431</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 127);
+    
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>SELECT</string>
+     </property>
+     <property name="font">
+      <font>
+       <italic>false</italic>
+      </font>
+     </property>
+     <property name="icon">
+      <iconset theme="QIcon::ThemeIcon::EditFind"/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ashoka</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Shatavari</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ashwagandha</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Anantamul</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Aloe vera</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Manjistha</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Triphala</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tulsi</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>450</y>
+      <width>621</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+    background-color: #bd49c86;      
+    color: #3D3D3D;                   
+    font: bold 20px &quot;Arial&quot;;
+    border-radius: 8px;
+    padding: 6px 12px;
+
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Blank_2"/>
+    <widget class="QWidget" name="ashoka_2">
+     <widget class="QPlainTextEdit" name="ashoka">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>411</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Ashoka is the queen of herbs for the female reproductive system, as a uterine tonic and aiding in heavy bleeding and discomfort.Literally meaning, “remover of sorrow,” this herb will aid in physical as well as psychological pain. Its astringent taste also aids in removing excess tissue and wastes and helps tone the uterus, aiding in heavy cycles.</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="shatavari">
+     <widget class="QPlainTextEdit" name="magnsium_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>341</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Shatavari herb is very building, is pitta reducing, and has a particular affinity to the female reproductive tract and urinary system. As such, it is seen as an adaptogen during times of stress and over-taxation of the body.</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="aswagandha_2">
+     <widget class="QPlainTextEdit" name="aswagandha">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>401</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="plainText">
+       <string>Ashwagandha is also used traditionally as a great tonic and adaptogen for the nervous system, including the adrenals. This, along with its building properties, make it a go-to herb for emaciation and burn-out, which can cause a scanty, vata flow.
+
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="anatamul">
+     <widget class="QPlainTextEdit" name="anantamul">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>401</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="plainText">
+       <string>The Ayurvedic classic texts love anantamul as a pitta pacifier in the blood, making it a great blood cleanser, and in the genitourinary tract. It acts as a cleanser, in addition to being a nourisher.
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="aloe">
+     <widget class="QPlainTextEdit" name="aloe_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>34</y>
+        <width>531</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>In Sanskrit, this herb is called kumari, meaning “young maiden.” Aloe vera is widely respected as being highly supportive of a woman's reproductive system. In such a way, the classic Ayurvedic texts have referred to this herb repeatedly for gynecological disturbances. Aloe is cooling and very cleansing to the urine, blood, and plasma. It removes stagnation and blockages and acts as a tonic.It is often used in conjunction with other herbs as a vehicle, or anupan , to the reproductive system. Aloe vera can be found in Women's Support tablets.
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="manjinistha">
+     <widget class="QPlainTextEdit" name="manjinistha_2">
+      <property name="geometry">
+       <rect>
+        <x>23</x>
+        <y>34</y>
+        <width>421</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Manjistha is an excellent blood cleanser, removing pitta, while also building the blood gently. As it cleanses the blood, it also is able to remove stagnation and constriction within the reproductive tract. Manjistha is one of the main ingredients in Blood Cleanse tablets.
+</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="triphala">
+     <widget class="QPlainTextEdit" name="triphala_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>351</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Triphala is most known for its ability to aid in the elimination of wastes, particularly from the gastrointestinal tract, and removing toxins from the body. In addition, it is a great rejuvenative. </string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tulsi_2">
+     <widget class="QPlainTextEdit" name="tulsi">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>301</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string>Tulsi is not only warming and nourishing to the lungs and prana, but it is a builder and nourisher of the rasa dhatu, making it a beautiful herb for nourishment for flow.</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget_2</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>536</x>
+     <y>354</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>472</x>
+     <y>578</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget_2</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget_3</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>898</x>
+     <y>331</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>895</x>
+     <y>480</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>listWidget_2</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget_3</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1027</x>
+     <y>385</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1138</x>
+     <y>466</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

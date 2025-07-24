@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>image/balasana.jpeg</file>
+        <file>image/bridge.jpeg</file>
+        <file>image/Cat-Cow-Pose.jpg</file>
+        <file>image/click.jpg</file>
+        <file>image/legup.jpeg</file>
+        <file>image/Paschimottanasana-Seated-Forward.jpg</file>
+        <file>image/reclinedbound.jpeg</file>
+        <file>image/2.webp</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>image/1.jpg</file>
+    </qresource>
+</RCC>

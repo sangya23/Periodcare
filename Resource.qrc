@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/loginicons">
+        <file>userimp.jpeg</file>
+        <file>emailimg.jpg</file>
+        <file>passimg.jpeg</file>
+        <file>periodsimg1.jpg</file>
+        <file>periodsimg2.jpg</file>
+        <file>515858058_1680459882674160_7226127355213665687_n.jpg</file>
+        <file>eyeicon.jpg</file>
+        <file>key.jpg</file>
+        <file>LOGO.jpg</file>
+        <file>normalcycle.jpg</file>
+    </qresource>
+    <qresource prefix="/tryout"/>
+</RCC>

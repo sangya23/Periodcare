@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/sanitary_image">
+        <file>Nine.png</file>
+        <file>Softy.png</file>
+        <file>Whisper.png</file>
+        <file>paddelux.png</file>
+        <file>Padelux.png</file>
+    </qresource>
+</RCC>
