@@ -10,7 +10,7 @@
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QChart>
 #include <QVBoxLayout>
-#include <QHBoxLayout>      // Added for legend layout
+#include <QHBoxLayout>
 #include <QDate>
 #include <QDebug>
 #include <numeric>
