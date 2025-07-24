@@ -53,8 +53,11 @@ private:
 
     const QColor PeriodStartColor = QColor(255, 0, 0);
     const QColor PeriodFlowColor = QColor(255, 100, 0);
+
     const QColor PredictedPeriodColor = QColor(155, 48, 255);
     const QColor FertileWindowColor = QColor(178, 242, 187);
-};
 
 #endif
+
+};
+

@@ -11,20 +11,23 @@
 #include <QtCharts/QChart>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QDate>
 #include <QDebug>
 #include <numeric>
 #include <algorithm>
 #include <cmath>
 #include <QSettings>
-#include <QLabel>
 
 PeriodCalendar::PeriodCalendar(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Form)
 {
     ui->setupUi(this);
+<<<<<<< HEAD
     ui->cycleLengthSpinBox->setValue(28);
 
+=======
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
 
     Calendar* customCalendar = qobject_cast<Calendar*>(ui->calendarWidget);
     if (!customCalendar) {
@@ -41,6 +44,7 @@ PeriodCalendar::PeriodCalendar(QWidget *parent)
     connect(ui->cycleLengthSpinBox, QOverload<int>::of(&QSpinBox::valueChanged),
             this, &PeriodCalendar::updatePredictions);
 
+<<<<<<< HEAD
     ui->periodLabel->setText("<html>&#x1F534; Period Start Day</html>");
     ui->periodLabel->setFont(QFont("Segoe UI Emoji"));
 
@@ -53,6 +57,8 @@ PeriodCalendar::PeriodCalendar(QWidget *parent)
     ui->predictedLabel->setText("<html>&#x1F7E3; Predicted Period</html>");
     ui->predictedLabel->setFont(QFont("Segoe UI Emoji"));
 
+=======
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
     if (!openDatabase()) {
         QMessageBox::critical(this, "Database Error", "Failed to open tracker.db. Application will exit.");
         qApp->quit();
@@ -242,7 +248,10 @@ void PeriodCalendar::updateCalendarHighlights() {
 
     cal->clearCustomDates();
 
+<<<<<<< HEAD
     // Highlight logged period start and flow days
+=======
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
     for (const QDate &d : periodDates) {
         cal->setDateColor(d, PeriodStartColor);
         for (int i = 1; i < 5; i++) {
@@ -250,7 +259,10 @@ void PeriodCalendar::updateCalendarHighlights() {
         }
     }
 
+<<<<<<< HEAD
     // Highlight predicted period days (not overlapping logged days)
+=======
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
     for (const QDate &d : predictedDates) {
         bool isLoggedPeriodDay = false;
         for (const QDate &loggedD : periodDates) {
@@ -264,7 +276,10 @@ void PeriodCalendar::updateCalendarHighlights() {
         }
     }
 
+<<<<<<< HEAD
     // Highlight fertile window days (not overlapping logged or predicted period days)
+=======
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
     for (const QDate &d : fertileDates) {
         bool isPeriodDay = false;
         for (const QDate &loggedD : periodDates) {
@@ -308,7 +323,11 @@ void PeriodCalendar::checkForUpcomingPeriod() {
     }
 
     if (upcoming && (lastAlertDate != today)) {
+<<<<<<< HEAD
         QMessageBox::information(this, "Upcoming Period Alert",
+=======
+        QMessageBox::information(this, "Upcoming Period Alert 🩸",
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
                                  QString("Your period is predicted to start on or around %1.\n"
                                          "Consider preparing necessary supplies.").arg(upcomingDate.toString("MMMM d, yyyy")));
         settings.setValue("LastPeriodAlertDate", today);
@@ -362,6 +381,11 @@ void PeriodCalendar::showCycleChart() {
     chartWindow->show();
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
 void PeriodCalendar::showStatistics() {
     if (periodDates.size() < 2) {
         QMessageBox::information(this, "Statistics", "Not enough data (at least two logged periods) to calculate statistics.");
@@ -379,6 +403,10 @@ void PeriodCalendar::showStatistics() {
     int average = calculateAverageCycle();
     int currentCycleLength = 0;
     if (!periodDates.isEmpty()) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
         currentCycleLength = periodDates.last().daysTo(QDate::currentDate());
     }
 
@@ -388,6 +416,7 @@ void PeriodCalendar::showStatistics() {
     }
 
     QString statsText = QString(
+<<<<<<< HEAD
                             "%1 Total logged periods: <b>%2</b><br>"
                             "%3 Shortest cycle: <b>%4</b> days<br>"
                             "%3 Longest cycle: <b>%5</b> days<br>"
@@ -403,6 +432,19 @@ void PeriodCalendar::showStatistics() {
                             .arg(QString::fromUtf8("\xE2\x8F\xB3"))
                             .arg(currentCycleLength)
                             .arg(QString::fromUtf8("\xF0\x9F\x94\xAE"))
+=======
+                            "<p>📊 Total logged periods: <b>%1</b></p>"
+                            "<p>📅 Shortest cycle: <b>%2</b> days</p>"
+                            "<p>📅 Longest cycle: <b>%3</b> days</p>"
+                            "<p>📅 Average cycle: <b>%4</b> days</p>"
+                            "<p>⏳ Current cycle length: <b>%5</b> days (since last period start)</p>"
+                            "<p>🔮 Next period expected around: <b>%6</b></p>")
+                            .arg(periodDates.size())
+                            .arg(shortest)
+                            .arg(longest)
+                            .arg(average)
+                            .arg(currentCycleLength)
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
                             .arg(nextPeriodExpectedDate.isValid() ? nextPeriodExpectedDate.toString("MMMM d, yyyy") : "N/A");
 
     QMessageBox::information(this, "Cycle Statistics", statsText);

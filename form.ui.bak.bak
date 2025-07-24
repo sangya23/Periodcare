@@ -148,6 +148,7 @@ font: 10pt &quot;Segoe UI&quot;;}</string>
     </layout>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
+=======
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -196,10 +197,12 @@ font: 10pt &quot;Segoe UI&quot;;}</string>
     </property>
    </widget>
    <widget class="QPushButton" name="logButton">
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>360</y>
+<<<<<<< HEAD
       <width>781</width>
       <height>61</height>
      </rect>
@@ -251,6 +254,7 @@ font: 10pt &quot;Segoe UI&quot;;}</string>
       </widget>
      </item>
     </layout>
+=======
       <width>83</width>
       <height>29</height>
      </rect>
@@ -293,6 +297,7 @@ font: 10pt &quot;Segoe UI&quot;;}</string>
     <property name="text">
      <string>showStatistics</string>
     </property>
+>>>>>>> a8fb3888d191c8d19ace929d4a265cbc009f7d1c
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
