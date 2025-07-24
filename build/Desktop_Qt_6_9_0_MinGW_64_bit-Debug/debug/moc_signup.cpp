@@ -40,18 +40,12 @@ template <> constexpr inline auto Signup::qt_create_metaobjectdata<qt_meta_tag_Z
     QtMocHelpers::StringRefStorage qt_stringData {
         "Signup",
         "on_createacc_clicked",
-        "",
-        "on_createaccount_clicked",
-        "on_alreadyacc_clicked"
+        ""
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'on_createacc_clicked'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_createaccount_clicked'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_alreadyacc_clicked'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -76,8 +70,6 @@ void Signup::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->on_createacc_clicked(); break;
-        case 1: _t->on_createaccount_clicked(); break;
-        case 2: _t->on_alreadyacc_clicked(); break;
         default: ;
         }
     }
@@ -103,14 +95,14 @@ int Signup::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 1;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 1)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 1;
     }
     return _id;
 }

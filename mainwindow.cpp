@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->showMaximized();
 
     ui->lineEdit_1->setPlaceholderText("Name");
     ui->lineEdit_2->setPlaceholderText("Surname");
@@ -155,7 +156,10 @@ void MainWindow::saveProfileToDatabase()
     if (!query.exec()) {
         qDebug() << "Save failed:" << query.lastError().text();
     } else {
+        currentUserName = ui->lineEdit_1->text();
         qDebug() << (userExists ? "Profile updated!" : "New profile inserted!");
+        emit profileUpdatedSignal();
+
     }
 
     db.close();

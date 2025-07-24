@@ -21,7 +21,6 @@ public:
     ~Dashboard();
 
 private slots:
-    void on_pushButton_8_clicked();
     void on_moodmgmt_clicked();
     void on_yogapb_clicked();
 
@@ -31,6 +30,8 @@ private slots:
 
     void on_trackerpb_clicked();
 
+    void on_profileAvatarButton_clicked();
+
 private:
     MainWindow *w;
     Moodmanagement *mood;
@@ -38,6 +39,7 @@ private:
     SanitaryCare *scare;
     nutrients *nutri;
     PeriodCalendar *track;
+    void loadProfileAvatar();
 
 private:
     Ui::Dashboard *ui;

@@ -22,6 +22,7 @@ PeriodCalendar::PeriodCalendar(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Form)
 {
     ui->setupUi(this);
+    this->showMaximized();
 
     Calendar* customCalendar = qobject_cast<Calendar*>(ui->calendarWidget);
     if (!customCalendar) {
@@ -104,7 +105,7 @@ void PeriodCalendar::removeDate() {
         return;
     }
 
-    if (QMessageBox::question(this, "Confirm Removal",
+    if (QMessageBox::question(nullptr, "Confirm Removal",
                               QString("Are you sure you want to remove period start on %1?").arg(selected.toString("MMMM d, yyyy")),
                               QMessageBox::Yes | QMessageBox::No) == QMessageBox::No) {
         return;
@@ -116,7 +117,7 @@ void PeriodCalendar::removeDate() {
     query.bindValue(":date", selected.toString(Qt::ISODate));
 
     if (query.exec()) {
-        QMessageBox::information(this, "Removed", QString("Period start removed for %1.").arg(selected.toString(Qt::ISODate)));
+        QMessageBox::information(nullptr, "Removed", QString("Period start removed for %1.").arg(selected.toString(Qt::ISODate)));
         loadPeriodData();
     } else {
         qDebug() << "Error removing date from DB:" << query.lastError().text();
@@ -127,7 +128,7 @@ void PeriodCalendar::removeDate() {
 void PeriodCalendar::logPeriod() {
     QDate selectedDate = ui->calendarWidget->selectedDate();
 
-    if (QMessageBox::question(this, "Confirm",
+    if (QMessageBox::question(nullptr, "Confirm",
                               QString("Log period starting on %1?").arg(selectedDate.toString("MMMM d, yyyy")),
                               QMessageBox::Yes | QMessageBox::No) == QMessageBox::No) {
         return;
@@ -352,13 +353,13 @@ void PeriodCalendar::showCycleChart() {
 
 void PeriodCalendar::showStatistics() {
     if (periodDates.size() < 2) {
-        QMessageBox::information(this, "Statistics", "Not enough data (at least two logged periods) to calculate statistics.");
+        QMessageBox::information(nullptr, "Statistics", "Not enough data (at least two logged periods) to calculate statistics.");
         return;
     }
 
     QList<int> lengths = calculateCycleLengths();
     if (lengths.isEmpty()) {
-        QMessageBox::information(this, "Statistics", "No valid cycle lengths found for statistics.");
+        QMessageBox::information(nullptr, "Statistics", "No valid cycle lengths found for statistics.");
         return;
     }
 

@@ -17,6 +17,8 @@ public:
 
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
+signals:
+    void profileUpdatedSignal();
 
 private:
     Ui::MainWindow *ui;

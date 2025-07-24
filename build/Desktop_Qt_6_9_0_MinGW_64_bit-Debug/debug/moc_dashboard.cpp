@@ -39,27 +39,27 @@ template <> constexpr inline auto Dashboard::qt_create_metaobjectdata<qt_meta_ta
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "Dashboard",
-        "on_pushButton_8_clicked",
-        "",
         "on_moodmgmt_clicked",
+        "",
         "on_yogapb_clicked",
         "on_sanitarycarepb_clicked",
         "on_nutripb_clicked",
-        "on_trackerpb_clicked"
+        "on_trackerpb_clicked",
+        "on_profileAvatarButton_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_pushButton_8_clicked'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_moodmgmt_clicked'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_yogapb_clicked'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_sanitarycarepb_clicked'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_nutripb_clicked'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_trackerpb_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_profileAvatarButton_clicked'
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
@@ -84,12 +84,12 @@ void Dashboard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     auto *_t = static_cast<Dashboard *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_pushButton_8_clicked(); break;
-        case 1: _t->on_moodmgmt_clicked(); break;
-        case 2: _t->on_yogapb_clicked(); break;
-        case 3: _t->on_sanitarycarepb_clicked(); break;
-        case 4: _t->on_nutripb_clicked(); break;
-        case 5: _t->on_trackerpb_clicked(); break;
+        case 0: _t->on_moodmgmt_clicked(); break;
+        case 1: _t->on_yogapb_clicked(); break;
+        case 2: _t->on_sanitarycarepb_clicked(); break;
+        case 3: _t->on_nutripb_clicked(); break;
+        case 4: _t->on_trackerpb_clicked(); break;
+        case 5: _t->on_profileAvatarButton_clicked(); break;
         default: ;
         }
     }

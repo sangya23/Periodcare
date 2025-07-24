@@ -6,6 +6,7 @@ yoga::yoga(QWidget *parent)
     , ui(new Ui::yoga)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 yoga::~yoga()

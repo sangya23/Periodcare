@@ -39,6 +39,7 @@ Signup::Signup(QWidget *parent)
     ui->emailsule->addAction(email,QLineEdit::LeadingPosition);
     QIcon pass(":/loginicons/passimg.jpeg");
     ui->pwdsule->addAction(pass,QLineEdit::LeadingPosition);
+    this->showMaximized();
 }
 
 Signup::~Signup()
@@ -105,20 +106,12 @@ void Signup::on_createacc_clicked()
         currentUserEmail=email;
         QMessageBox::information(nullptr, "Success", "Account created successfully!");
         well=new Welcome();
-        well->show();
+         well->show();
+        this->close();
+
+
     }
-
-
 }
 
-void Signup::on_createaccount_clicked()
-{
-    this->close();
-}
 
-void Signup::on_alreadyacc_clicked()
-{
-    this->close();
-
-}
 

@@ -1,7 +1,6 @@
 #include "loginpage.h"
 #include "ui_loginpage.h"
 #include "globals.h"
-
 #include <QMessageBox>
 Loginpage::Loginpage(QWidget *parent)
     : QMainWindow(parent)
@@ -16,6 +15,7 @@ Loginpage::Loginpage(QWidget *parent)
     ui->usernamelineedit->addAction(email,QLineEdit::LeadingPosition);
     QIcon pass(":/loginicons/passimg.jpeg");
     ui->pwdlineedit->addAction(pass,QLineEdit::LeadingPosition);
+    this->showMaximized();
 }
 Loginpage::~Loginpage()
 {
@@ -31,8 +31,8 @@ void Loginpage::Login()
         return;
     }
 
-    QString email= ui->usernamelineedit->text();
-    QString password=ui->pwdlineedit->text();
+    QString email = ui->usernamelineedit->text();
+    QString password = ui->pwdlineedit->text();
 
     if (email.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "Input Error", "Please enter both email and password.");
@@ -51,13 +51,24 @@ void Loginpage::Login()
 
     if (query.next()) {
         currentUserEmail = email;
-        dashboardWindow= new Dashboard();
+        QSqlQuery nameQuery(db);
+        nameQuery.prepare("SELECT name FROM profiles WHERE email = ?");
+        nameQuery.addBindValue(currentUserEmail);
+
+        if (nameQuery.exec() && nameQuery.next()) {
+            currentUserName = nameQuery.value(0).toString();
+        } else {
+            currentUserName = "User";  // fallback
+        }
+
+        dashboardWindow = new Dashboard();
         dashboardWindow->show();
         this->close();
     } else {
         QMessageBox::warning(nullptr, "Login Failed", "Invalid email or password.");
     }
 }
+
 
 
 void Loginpage::on_createaccount_clicked()

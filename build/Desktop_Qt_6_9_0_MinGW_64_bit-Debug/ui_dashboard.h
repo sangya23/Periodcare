@@ -34,7 +34,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton_8;
+    QPushButton *profileAvatarButton;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout_2;
     QLabel *welcomeLabel;
@@ -68,13 +68,14 @@ public:
         gridLayout->setObjectName("gridLayout");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(3, 3, 3, 3);
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setMinimumSize(QSize(60, 60));
-        label_3->setMaximumSize(QSize(60, 60));
+        label_3->setMinimumSize(QSize(80, 80));
+        label_3->setMaximumSize(QSize(80, 80));
         label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "	border-image: url(:/loginicons/LOGO.jpg);\n"
-"	border-radius:30px;\n"
+"	border-radius:40px;\n"
 "}"));
 
         horizontalLayout->addWidget(label_3);
@@ -94,9 +95,11 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        pushButton_8 = new QPushButton(centralwidget);
-        pushButton_8->setObjectName("pushButton_8");
-        pushButton_8->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        profileAvatarButton = new QPushButton(centralwidget);
+        profileAvatarButton->setObjectName("profileAvatarButton");
+        profileAvatarButton->setMinimumSize(QSize(100, 100));
+        profileAvatarButton->setMaximumSize(QSize(100, 100));
+        profileAvatarButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
 "    font: 12px \"Arial\";\n"
@@ -108,7 +111,7 @@ public:
 "background-color: #e6769f;}\n"
 ""));
 
-        horizontalLayout->addWidget(pushButton_8);
+        horizontalLayout->addWidget(profileAvatarButton);
 
         horizontalLayout->setStretch(0, 1);
         horizontalLayout->setStretch(1, 2);
@@ -149,7 +152,7 @@ public:
         trackerpb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
+"    font: 20px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
@@ -165,7 +168,7 @@ public:
         moodmgmt->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
+"    font: 20px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
@@ -181,7 +184,7 @@ public:
         yogapb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
+"    font: 20px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
@@ -197,7 +200,7 @@ public:
         sanitarycarepb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
+"    font: 20px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
@@ -213,7 +216,7 @@ public:
         nutripb->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
+"    font: 20px \"Arial\";\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}\n"
@@ -253,7 +256,7 @@ public:
         Dashboard->setWindowTitle(QCoreApplication::translate("Dashboard", "MainWindow", nullptr));
         label_3->setText(QString());
         label_2->setText(QCoreApplication::translate("Dashboard", "WELCOME TO PERIOD", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("Dashboard", "Profile", nullptr));
+        profileAvatarButton->setText(QString());
         welcomeLabel->setText(QString());
         label_4->setText(QString());
         trackerpb->setText(QCoreApplication::translate("Dashboard", "Tracking", nullptr));

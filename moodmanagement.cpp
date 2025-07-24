@@ -7,6 +7,7 @@ Moodmanagement::Moodmanagement(QWidget *parent)
     , ui(new Ui::Moodmanagement)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 Moodmanagement::~Moodmanagement()

@@ -6,6 +6,7 @@ nutrients::nutrients(QWidget *parent)
     , ui(new Ui::nutrients)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 nutrients::~nutrients()

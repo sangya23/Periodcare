@@ -6,6 +6,7 @@ SanitaryCare::SanitaryCare(QWidget *parent)
     , ui(new Ui::SanitaryCare)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 SanitaryCare::~SanitaryCare()

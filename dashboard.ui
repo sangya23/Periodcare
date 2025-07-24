@@ -63,24 +63,36 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0" colspan="2">
      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2,3,2,1">
+      <property name="leftMargin">
+       <number>3</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
+      </property>
+      <property name="rightMargin">
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
+      </property>
       <item>
        <widget class="QLabel" name="label_3">
         <property name="minimumSize">
          <size>
-          <width>60</width>
-          <height>60</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>60</width>
-          <height>60</height>
+          <width>80</width>
+          <height>80</height>
          </size>
         </property>
         <property name="styleSheet">
          <string notr="true">QLabel{
 	border-image: url(:/loginicons/LOGO.jpg);
-	border-radius:30px;
+	border-radius:40px;
 }</string>
         </property>
         <property name="text">
@@ -134,7 +146,19 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="profileAvatarButton">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>100</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton {
     background-color: #F497B6;      
@@ -149,7 +173,7 @@ background-color: #e6769f;}
 </string>
         </property>
         <property name="text">
-         <string>Profile</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -212,7 +236,7 @@ border-radius: 150px;
            <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
-    font: 12px &quot;Arial&quot;;
+    font: 20px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }
@@ -232,7 +256,7 @@ background-color: #e6769f;}
            <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
-    font: 12px &quot;Arial&quot;;
+    font: 20px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }
@@ -252,7 +276,7 @@ background-color: #e6769f;}
            <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
-    font: 12px &quot;Arial&quot;;
+    font: 20px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }
@@ -272,7 +296,7 @@ background-color: #e6769f;}
            <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
-    font: 12px &quot;Arial&quot;;
+    font: 20px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }
@@ -292,7 +316,7 @@ background-color: #e6769f;}
            <string notr="true">QPushButton {
     background-color: #F497B6;      
     color: white;                   
-    font: 12px &quot;Arial&quot;;
+    font: 20px &quot;Arial&quot;;
     border-radius: 8px;
     padding: 6px 12px;
 }

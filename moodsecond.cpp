@@ -6,6 +6,7 @@ moodsecond::moodsecond(QWidget *parent)
     , ui(new Ui::moodsecond)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 moodsecond::~moodsecond()

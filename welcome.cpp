@@ -7,6 +7,7 @@ Welcome::Welcome(QWidget *parent)
     , ui(new Ui::Welcome)
 {
     ui->setupUi(this);
+    this->showMaximized();
 }
 
 Welcome::~Welcome()
