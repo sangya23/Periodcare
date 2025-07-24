@@ -36,8 +36,9 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_8;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *label_4;
+    QVBoxLayout *verticalLayout_2;
     QLabel *welcomeLabel;
+    QLabel *label_4;
     QVBoxLayout *verticalLayout;
     QPushButton *trackerpb;
     QPushButton *moodmgmt;
@@ -119,16 +120,27 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName("label_4");
-
-        horizontalLayout_2->addWidget(label_4);
-
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName("verticalLayout_2");
         welcomeLabel = new QLabel(centralwidget);
         welcomeLabel->setObjectName("welcomeLabel");
-        welcomeLabel->setMinimumSize(QSize(0, 500));
+        welcomeLabel->setMinimumSize(QSize(0, 55));
+        welcomeLabel->setMaximumSize(QSize(16777215, 55));
 
-        horizontalLayout_2->addWidget(welcomeLabel);
+        verticalLayout_2->addWidget(welcomeLabel);
+
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName("label_4");
+        label_4->setMinimumSize(QSize(400, 400));
+        label_4->setMaximumSize(QSize(400, 400));
+        label_4->setStyleSheet(QString::fromUtf8("border-image: url(:/loginicons/normalcycle.jpg);\n"
+"border-radius: 150px;\n"
+""));
+
+        verticalLayout_2->addWidget(label_4);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_2);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
@@ -242,8 +254,8 @@ public:
         label_3->setText(QString());
         label_2->setText(QCoreApplication::translate("Dashboard", "WELCOME TO PERIOD", nullptr));
         pushButton_8->setText(QCoreApplication::translate("Dashboard", "Profile", nullptr));
-        label_4->setText(QCoreApplication::translate("Dashboard", "TextLabel", nullptr));
         welcomeLabel->setText(QString());
+        label_4->setText(QString());
         trackerpb->setText(QCoreApplication::translate("Dashboard", "Tracking", nullptr));
         moodmgmt->setText(QCoreApplication::translate("Dashboard", "mood ", nullptr));
         yogapb->setText(QCoreApplication::translate("Dashboard", "Yoga", nullptr));

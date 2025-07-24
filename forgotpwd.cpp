@@ -37,7 +37,7 @@ void forgotpwd::on_okpb_clicked()
         return;
     }
 
-    QSqlDatabase db = QSqlDatabase::database("UserInfoConnection");
+    QSqlDatabase db = QSqlDatabase::database("UserConnection");
     if (!db.isOpen()) {
         QMessageBox::critical(nullptr, "Database Error", "Database is not open!");
         return;

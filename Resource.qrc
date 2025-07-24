@@ -9,6 +9,7 @@
         <file>eyeicon.jpg</file>
         <file>key.jpg</file>
         <file>LOGO.jpg</file>
+        <file>normalcycle.jpg</file>
     </qresource>
     <qresource prefix="/tryout"/>
 </RCC>

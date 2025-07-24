@@ -53,7 +53,7 @@ void changepwd::on_okcp_clicked()
         return;
     }
 
-    QSqlDatabase db = QSqlDatabase::database("UserInfoConnection");
+    QSqlDatabase db = QSqlDatabase::database("UserConnection");
     if (!db.isOpen()) {
         QMessageBox::critical(this, "Error", "Database is not open.");
         return;
