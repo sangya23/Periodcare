@@ -1,4 +1,5 @@
 #include "dashboard.h"
+#include "qlineedit.h"
 #include "qpainterpath.h"
 #include "ui_dashboard.h"
 #include "mainwindow.h"
@@ -141,9 +142,10 @@ void Dashboard::logoutUser()
 {
     qDebug() << "Logout clicked!";
 
-    if (m_loginPage)
+    if (m_loginPage){
+        m_loginPage->resetFields();
         m_loginPage->show();
-
+    }
     this->close();
 }
 

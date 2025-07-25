@@ -21,7 +21,11 @@ Loginpage::~Loginpage()
 {
     delete ui;
 }
-
+void Loginpage::resetFields()
+{
+    ui->usernamelineedit->clear();
+    ui->pwdlineedit->clear();
+}
 void Loginpage::Login()
 {
     QSqlDatabase db = QSqlDatabase::database("UserConnection");

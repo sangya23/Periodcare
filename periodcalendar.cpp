@@ -54,6 +54,7 @@ PeriodCalendar::PeriodCalendar(QWidget *parent)
     ui->predictedLabel->setText("<html>&#x1F7E3; Predicted Period</html>");
     ui->predictedLabel->setFont(QFont("Segoe UI Emoji"));
 
+    openDatabase();
     createTable();
     loadPeriodData();
     updateCalendarHighlights();

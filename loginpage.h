@@ -18,6 +18,8 @@ class Loginpage : public QMainWindow
 public:
     explicit Loginpage(QWidget *parent = nullptr);
     ~Loginpage();
+public:
+    void resetFields();
 private:
     Signup *signupWindow;
     Dashboard *dashboardWindow=nullptr;
