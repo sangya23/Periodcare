@@ -11,6 +11,8 @@
 #include <QtCharts/QValueAxis>
 #include <QtCharts/QChart>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QLabel>
 #include <QDate>
 #include <QDebug>
 #include <numeric>
@@ -22,7 +24,9 @@ PeriodCalendar::PeriodCalendar(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Form)
 {
     ui->setupUi(this);
+
     this->showMaximized();
+    ui->cycleLengthSpinBox->setValue(28);
 
     Calendar* customCalendar = qobject_cast<Calendar*>(ui->calendarWidget);
     if (!customCalendar) {
@@ -38,12 +42,17 @@ PeriodCalendar::PeriodCalendar(QWidget *parent)
     connect(ui->statsButton, &QPushButton::clicked, this, &PeriodCalendar::showStatistics);
     connect(ui->cycleLengthSpinBox, QOverload<int>::of(&QSpinBox::valueChanged),
             this, &PeriodCalendar::updatePredictions);
+    ui->periodLabel->setText("<html>&#x1F534; Period Start Day</html>");
+    ui->periodLabel->setFont(QFont("Segoe UI Emoji"));
 
-    if (!openDatabase()) {
-        QMessageBox::critical(this, "Database Error", "Failed to open tracker.db. Application will exit.");
-        qApp->quit();
-        return;
-    }
+    ui->flowLabel->setText("<html>&#x1F7E0; Period Flow Days</html>");
+    ui->flowLabel->setFont(QFont("Segoe UI Emoji"));
+
+    ui->fertileLabel->setText("<html>&#x1F7E2; Fertile Window</html>");
+    ui->fertileLabel->setFont(QFont("Segoe UI Emoji"));
+
+    ui->predictedLabel->setText("<html>&#x1F7E3; Predicted Period</html>");
+    ui->predictedLabel->setFont(QFont("Segoe UI Emoji"));
 
     createTable();
     loadPeriodData();
@@ -239,6 +248,7 @@ void PeriodCalendar::updateCalendarHighlights() {
         }
     }
 
+
     for (const QDate &d : predictedDates) {
         bool isLoggedPeriodDay = false;
         for (const QDate &loggedD : periodDates) {
@@ -350,7 +360,6 @@ void PeriodCalendar::showCycleChart() {
 }
 
 
-
 void PeriodCalendar::showStatistics() {
     if (periodDates.size() < 2) {
         QMessageBox::information(nullptr, "Statistics", "Not enough data (at least two logged periods) to calculate statistics.");
@@ -378,6 +387,7 @@ void PeriodCalendar::showStatistics() {
     }
 
     QString statsText = QString(
+
                             "<p>📊 Total logged periods: <b>%1</b></p>"
                             "<p>📅 Shortest cycle: <b>%2</b> days</p>"
                             "<p>📅 Longest cycle: <b>%3</b> days</p>"
