@@ -94,7 +94,7 @@ public:
 "}"));
         usernamelineedit = new QLineEdit(frame);
         usernamelineedit->setObjectName("usernamelineedit");
-        usernamelineedit->setGeometry(QRect(20, 130, 261, 31));
+        usernamelineedit->setGeometry(QRect(20, 130, 261, 35));
         usernamelineedit->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -105,7 +105,7 @@ public:
 "}"));
         pwdlineedit = new QLineEdit(frame);
         pwdlineedit->setObjectName("pwdlineedit");
-        pwdlineedit->setGeometry(QRect(20, 170, 261, 31));
+        pwdlineedit->setGeometry(QRect(20, 170, 261, 35));
         pwdlineedit->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"

@@ -121,7 +121,7 @@ background-color: #e6769f;}</string>
          <x>20</x>
          <y>130</y>
          <width>261</width>
-         <height>31</height>
+         <height>35</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -144,7 +144,7 @@ background-color: #e6769f;}</string>
          <x>20</x>
          <y>170</y>
          <width>261</width>
-         <height>31</height>
+         <height>35</height>
         </rect>
        </property>
        <property name="styleSheet">

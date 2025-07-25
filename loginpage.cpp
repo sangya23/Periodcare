@@ -61,9 +61,9 @@ void Loginpage::Login()
             currentUserName = "User";  // fallback
         }
 
-        dashboardWindow = new Dashboard();
+        dashboardWindow = new Dashboard(this);
         dashboardWindow->show();
-        this->close();
+        this->hide();
     } else {
         QMessageBox::warning(nullptr, "Login Failed", "Invalid email or password.");
     }

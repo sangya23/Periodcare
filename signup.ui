@@ -297,7 +297,7 @@ background-color: #e6769f;}
          <x>30</x>
          <y>240</y>
          <width>251</width>
-         <height>31</height>
+         <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -318,7 +318,7 @@ background-color: #e6769f;}
          <x>30</x>
          <y>130</y>
          <width>251</width>
-         <height>31</height>
+         <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -339,7 +339,7 @@ background-color: #e6769f;}
          <x>30</x>
          <y>180</y>
          <width>251</width>
-         <height>31</height>
+         <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">

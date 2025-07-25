@@ -24,7 +24,7 @@ void Welcome::on_pushButton_clicked()
 
 void Welcome::on_pushButton_2_clicked()
 {
-    dashb=new Dashboard();
+    dashb=new Dashboard(nullptr);
     dashb->show();
     this->close();
 }

@@ -20,7 +20,7 @@ public:
     ~Loginpage();
 private:
     Signup *signupWindow;
-    Dashboard *dashboardWindow;
+    Dashboard *dashboardWindow=nullptr;
     forgotpwd *forgotpwdWindow;
 
 private slots:

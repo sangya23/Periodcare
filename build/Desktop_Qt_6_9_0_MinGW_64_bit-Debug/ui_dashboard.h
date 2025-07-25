@@ -19,6 +19,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -34,11 +35,11 @@ public:
     QSpacerItem *horizontalSpacer;
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *profileAvatarButton;
+    QToolButton *profileAvatarButton;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout_2;
     QLabel *welcomeLabel;
-    QLabel *label_4;
+    QLabel *quotelabel;
     QVBoxLayout *verticalLayout;
     QPushButton *trackerpb;
     QPushButton *moodmgmt;
@@ -95,21 +96,21 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        profileAvatarButton = new QPushButton(centralwidget);
+        profileAvatarButton = new QToolButton(centralwidget);
         profileAvatarButton->setObjectName("profileAvatarButton");
         profileAvatarButton->setMinimumSize(QSize(100, 100));
         profileAvatarButton->setMaximumSize(QSize(100, 100));
-        profileAvatarButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: #F497B6;      \n"
-"    color: white;                   \n"
-"    font: 12px \"Arial\";\n"
-"    border-radius: 8px;\n"
-"    padding: 6px 12px;\n"
-"}\n"
-"QPushButton:hover\n"
-"{\n"
-"background-color: #e6769f;}\n"
-""));
+        profileAvatarButton->setStyleSheet(QString::fromUtf8("/*QToolButton {\n"
+"          background-color: #F497B6;\n"
+"          color: white;\n"
+"          font: 12px \"Arial\";\n"
+"          border-radius: 8px;\n"
+"          padding: 6px 12px;\n"
+"      }\n"
+"      QToolButton:hover\n"
+"      {\n"
+"      background-color: #e6769f;}\n"
+"      "));
 
         horizontalLayout->addWidget(profileAvatarButton);
 
@@ -127,20 +128,18 @@ public:
         verticalLayout_2->setObjectName("verticalLayout_2");
         welcomeLabel = new QLabel(centralwidget);
         welcomeLabel->setObjectName("welcomeLabel");
-        welcomeLabel->setMinimumSize(QSize(0, 55));
-        welcomeLabel->setMaximumSize(QSize(16777215, 55));
+        welcomeLabel->setMinimumSize(QSize(0, 70));
+        welcomeLabel->setMaximumSize(QSize(16777215, 70));
 
         verticalLayout_2->addWidget(welcomeLabel);
 
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName("label_4");
-        label_4->setMinimumSize(QSize(400, 400));
-        label_4->setMaximumSize(QSize(400, 400));
-        label_4->setStyleSheet(QString::fromUtf8("border-image: url(:/loginicons/normalcycle.jpg);\n"
-"border-radius: 150px;\n"
-""));
+        quotelabel = new QLabel(centralwidget);
+        quotelabel->setObjectName("quotelabel");
+        quotelabel->setMinimumSize(QSize(800, 400));
+        quotelabel->setMaximumSize(QSize(400, 400));
+        quotelabel->setStyleSheet(QString::fromUtf8(""));
 
-        verticalLayout_2->addWidget(label_4);
+        verticalLayout_2->addWidget(quotelabel);
 
 
         horizontalLayout_2->addLayout(verticalLayout_2);
@@ -258,12 +257,12 @@ public:
         label_2->setText(QCoreApplication::translate("Dashboard", "WELCOME TO PERIOD", nullptr));
         profileAvatarButton->setText(QString());
         welcomeLabel->setText(QString());
-        label_4->setText(QString());
-        trackerpb->setText(QCoreApplication::translate("Dashboard", "Tracking", nullptr));
-        moodmgmt->setText(QCoreApplication::translate("Dashboard", "mood ", nullptr));
-        yogapb->setText(QCoreApplication::translate("Dashboard", "Yoga", nullptr));
-        sanitarycarepb->setText(QCoreApplication::translate("Dashboard", "Sanitary Care", nullptr));
-        nutripb->setText(QCoreApplication::translate("Dashboard", "Nutrients", nullptr));
+        quotelabel->setText(QString());
+        trackerpb->setText(QCoreApplication::translate("Dashboard", "\360\237\227\223\357\270\217Tracking", nullptr));
+        moodmgmt->setText(QCoreApplication::translate("Dashboard", "\360\237\230\212mood ", nullptr));
+        yogapb->setText(QCoreApplication::translate("Dashboard", "\360\237\247\230\342\200\215Yoga", nullptr));
+        sanitarycarepb->setText(QCoreApplication::translate("Dashboard", "\360\237\251\270Sanitary Care", nullptr));
+        nutripb->setText(QCoreApplication::translate("Dashboard", "\360\237\245\254Nutrients", nullptr));
     } // retranslateUi
 
 };

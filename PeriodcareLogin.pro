@@ -16,6 +16,7 @@ SOURCES += \
     homepage.cpp \
     loginpage.cpp \
     main.cpp \
+    moodlogdialog.cpp \
     signup.cpp \
     welcome.cpp  \
     editprofilewindow.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     globals.h \
     homepage.h \
     loginpage.h \
+    moodlogdialog.h \
     signup.h \
     welcome.h \
     avatarutils.h \
@@ -54,6 +56,7 @@ FORMS += \
     forgotpwd.ui \
     homepage.ui \
     loginpage.ui \
+    moodlogdialog.ui \
     signup.ui \
     welcome.ui \
     editprofilewindow.ui \

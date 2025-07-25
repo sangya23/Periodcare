@@ -5,6 +5,7 @@ release/globals.o
 release/homepage.o
 release/loginpage.o
 release/main.o
+release/moodlogdialog.o
 release/signup.o
 release/welcome.o
 release/editprofilewindow.o
@@ -25,6 +26,7 @@ release/moc_dashboard.o
 release/moc_forgotpwd.o
 release/moc_homepage.o
 release/moc_loginpage.o
+release/moc_moodlogdialog.o
 release/moc_signup.o
 release/moc_welcome.o
 release/moc_editprofilewindow.o

@@ -14,11 +14,14 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget{
-background-color:rgb(228, 205, 255)}
-</string>
+   <string notr="true">QWidget {
+    background-color: rgb(228, 205, 255);
+   }
+   </string>
   </property>
   <widget class="QWidget" name="centralwidget">
+
+   <!-- Calendar Widget -->
    <widget class="Calendar" name="calendarWidget">
     <property name="geometry">
      <rect>
@@ -40,33 +43,19 @@ background-color:rgb(228, 205, 255)}
       <height>361</height>
      </size>
     </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
     <property name="layoutDirection">
      <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">QCalendarWidget QWidget{
-background-color:rgb(255, 255, 255);
-color:rgb(0, 0, 0);
-}</string>
+     <string notr="true">QCalendarWidget QWidget {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+     }
+     </string>
     </property>
    </widget>
-<<<<<<< HEAD
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>480</y>
-      <width>63</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
+
+   <!-- Labels on the right side -->
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
@@ -77,68 +66,81 @@ color:rgb(0, 0, 0);
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
-     <item row="0" column="1">
-      <widget class="QSpinBox" name="cycleLengthSpinBox">
-       <property name="styleSheet">
-        <string notr="true">QSpinBox {color:rgb(0, 0, 0);}</string>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="0">
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="labelCycleLength">
        <property name="styleSheet">
-        <string notr="true">QLabel{
-	color: rgb(0, 0, 0);
-
-font: 10pt &quot;Segoe UI&quot;;}
-</string>
+        <string notr="true">QLabel {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
        <property name="text">
         <string>Average Cycle Length</string>
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="cycleLengthSpinBox">
+       <property name="styleSheet">
+        <string notr="true">QSpinBox { color: rgb(0, 0, 0); }</string>
+       </property>
+      </widget>
+     </item>
+
      <item row="1" column="0">
       <widget class="QLabel" name="flowLabel">
        <property name="styleSheet">
-        <string notr="true">QLabel{color:rgb(0, 0, 0);
-font: 10pt &quot;Segoe UI&quot;;}
-</string>
+        <string notr="true">QLabel {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
        <property name="text">
         <string>Period starts</string>
        </property>
       </widget>
      </item>
+
      <item row="2" column="0">
       <widget class="QLabel" name="periodLabel">
        <property name="styleSheet">
-        <string notr="true">QLabel {color:rgb(0, 0, 0);
-font: 10pt &quot;Segoe UI&quot;;}</string>
+        <string notr="true">QLabel {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
        <property name="text">
         <string>Flow days</string>
        </property>
       </widget>
      </item>
+
      <item row="3" column="0">
       <widget class="QLabel" name="fertileLabel">
        <property name="styleSheet">
-        <string notr="true">QLabel{color:rgb(0,0,0);
-font: 10pt &quot;Segoe UI&quot;;}</string>
+        <string notr="true">QLabel {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
        <property name="text">
         <string>Fertile Window</string>
        </property>
       </widget>
      </item>
+
      <item row="4" column="0">
       <widget class="QLabel" name="predictedLabel">
        <property name="styleSheet">
-        <string notr="true">QLabel{
-color:rgb(0,0,0);
-
-font: 10pt &quot;Segoe UI&quot;;}</string>
+        <string notr="true">QLabel {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
        <property name="text">
         <string>Upcoming Period date</string>
@@ -147,154 +149,79 @@ font: 10pt &quot;Segoe UI&quot;;}</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>390</y>
-      <width>151</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel{
-	color: rgb(0, 0, 0);}
-</string>
-    </property>
-    <property name="text">
-     <string>Average Cycle Length</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="chartButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>360</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {color:rgb(0, 0, 0);}</string>
-    </property>
-    <property name="text">
-     <string>showCycle</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="cycleLengthSpinBox">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>390</y>
-      <width>71</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QSpinBox {color:rgb(0, 0, 0);}</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="logButton">
+
+   <!-- Buttons with horizontal layout at bottom -->
+   <widget class="QWidget" name="buttonWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>360</y>
+      <y>580</y>
       <width>781</width>
       <height>61</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <layout class="QHBoxLayout" name="horizontalLayoutButtons">
      <item>
       <widget class="QPushButton" name="logButton">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {color:rgb(0, 0, 0);
-
-font: 10pt &quot;Segoe UI&quot;;}</string>
-       </property>
        <property name="text">
         <string>Log Period</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="deleteButton">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {color:rgb(0, 0, 0);
-font: 10pt &quot;Segoe UI&quot;;}</string>
-       </property>
        <property name="text">
         <string>Remove Data</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="statsButton">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {color:rgb(0, 0, 0);
-font: 10pt &quot;Segoe UI&quot;;}</string>
-       </property>
        <property name="text">
         <string>Statistics</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="chartButton">
-       <property name="styleSheet">
-        <string notr="true">QPushButton {color:rgb(0, 0, 0);
-font: 10pt &quot;Segoe UI&quot;;}</string>
-       </property>
        <property name="text">
         <string>Cycle Graph</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+         color: rgb(0, 0, 0);
+         font: 10pt "Segoe UI";
+        }
+        </string>
        </property>
       </widget>
      </item>
     </layout>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {color:rgb(0, 0, 0);}</string>
-    </property>
-    <property name="text">
-     <string>Log Period</string>
-    </property>
    </widget>
-   <widget class="QPushButton" name="deleteButton">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>360</y>
-      <width>111</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {color:rgb(0, 0, 0);}</string>
-    </property>
-    <property name="text">
-     <string>Remove Data</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="statsButton">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>360</y>
-      <width>111</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {color:rgb(0, 0, 0);}</string>
-    </property>
-    <property name="text">
-     <string>showStatistics</string>
-    </property>
-   </widget>
+
   </widget>
+
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -305,14 +232,15 @@ font: 10pt &quot;Segoe UI&quot;;}</string>
     </rect>
    </property>
   </widget>
+
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>Calendar</class>
-   <extends>QCalendarWidget</extends>
-   <header>calendar.h</header>
-  </customwidget>
+   <customwidget>
+     <class>Calendar</class>
+     <extends>QCalendarWidget</extends>
+     <header>calendar.h</header>
+   </customwidget>
  </customwidgets>
  <resources/>
  <connections/>

@@ -1,48 +1,41 @@
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
-#include "mainwindow.h"
-#include "moodmanagement.h"
-#include "yoga.h"
-#include "sanitarycare.h"
-#include "nutrients.h"
-#include "periodcalendar.h"
+
 #include <QMainWindow>
 
 namespace Ui {
 class Dashboard;
 }
 
+// Forward declaration of Loginpage
+class Loginpage;
+
 class Dashboard : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit Dashboard(QWidget *parent = nullptr);
+    // Pass Loginpage pointer in constructor and save it
+    explicit Dashboard(Loginpage *loginPage, QWidget *parent = nullptr);
     ~Dashboard();
 
 private slots:
+    void openProfile();
+    void logoutUser();
     void on_moodmgmt_clicked();
     void on_yogapb_clicked();
-
     void on_sanitarycarepb_clicked();
-
     void on_nutripb_clicked();
-
     void on_trackerpb_clicked();
 
-    void on_profileAvatarButton_clicked();
-
 private:
-    MainWindow *w;
-    Moodmanagement *mood;
-    yoga *yog;
-    SanitaryCare *scare;
-    nutrients *nutri;
-    PeriodCalendar *track;
     void loadProfileAvatar();
+    void showRandomQuote();
 
-private:
     Ui::Dashboard *ui;
+
+    // Pointer to Loginpage to show it again on logout
+    Loginpage *m_loginPage;
 };
 
 #endif // DASHBOARD_H

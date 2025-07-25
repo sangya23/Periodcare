@@ -1,4 +1,5 @@
 #include "dashboard.h"
+#include "qpainterpath.h"
 #include "ui_dashboard.h"
 #include "mainwindow.h"
 #include "moodmanagement.h"
@@ -7,19 +8,54 @@
 #include "globals.h"
 #include "sanitarycare.h"
 #include "periodcalendar.h"
+#include "loginpage.h"
 #include <QPainter>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
-Dashboard::Dashboard(QWidget *parent)
+#include <QRandomGenerator>
+#include <QToolButton>
+#include <QMenu>
+#include <QAction>
+#include <QDebug>
+class Loginpage;
+Dashboard::Dashboard(Loginpage *loginPage, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Dashboard)
-
+    , m_loginPage(loginPage)
 {
     ui->setupUi(this);
-    ui->welcomeLabel->setText("Hello, " + currentUserName+"!");
-    loadProfileAvatar();
+    ui->welcomeLabel->setText("Hello, " + currentUserName + "!");
+    ui->welcomeLabel->setStyleSheet("font-size: 40px; color: #555; padding: 10px;");
     this->showMaximized();
+
+    // Setup profile avatar button menu (using existing ui->profileAvatarButton)
+    QToolButton* profileToolButton = ui->profileAvatarButton;
+    profileToolButton->setPopupMode(QToolButton::InstantPopup);
+
+    QMenu* menu = new QMenu(profileToolButton);
+    QAction* profileAction = new QAction("Go to Profile", this);
+    QAction* logoutAction = new QAction("Logout", this);
+    menu->addAction(profileAction);
+    menu->addAction(logoutAction);
+
+    profileToolButton->setMenu(menu);
+
+    profileToolButton->setStyleSheet(
+        "QToolButton {"
+        " background-color: #F497B6;"
+        " border-radius: 50px;"
+        "}"
+        "QToolButton:hover {"
+        " background-color: #e6769f;"
+        "}"
+        );
+
+    connect(profileAction, &QAction::triggered, this, &Dashboard::openProfile);
+    connect(logoutAction, &QAction::triggered, this, &Dashboard::logoutUser);
+
+    loadProfileAvatar();
+    showRandomQuote();
 }
 
 Dashboard::~Dashboard()
@@ -27,42 +63,13 @@ Dashboard::~Dashboard()
     delete ui;
 }
 
-
-void Dashboard::on_moodmgmt_clicked()
+void Dashboard::loadProfileAvatar()
 {
-    mood=new Moodmanagement();
-    mood->show();
-}
-
-
-void Dashboard::on_yogapb_clicked()
-{
-    yog=new yoga();
-    yog->show();
-}
-
-
-void Dashboard::on_sanitarycarepb_clicked()
-{
-    scare=new SanitaryCare;
-    scare->show();
-}
-
-
-void Dashboard::on_nutripb_clicked()
-{
-    nutri=new nutrients();
-    nutri->show();
-}
-
-
-void Dashboard::on_trackerpb_clicked()
-{
-    track=new PeriodCalendar();
-    track->show();
-}
-
-void Dashboard::loadProfileAvatar() {
+    QToolButton* profileToolButton = ui->profileAvatarButton;
+    if (!profileToolButton) {
+        qWarning() << "profileAvatarButton not found!";
+        return;
+    }
 
     QSqlDatabase db = QSqlDatabase::database("UserConnection");
 
@@ -86,40 +93,106 @@ void Dashboard::loadProfileAvatar() {
         if (!avatarPath.isEmpty()) {
             const int avatarSize = 100;
 
-            QPixmap pixmap;
-            pixmap.load(avatarPath, nullptr, Qt::AvoidDither | Qt::ThresholdDither | Qt::PreferDither);
-            QPixmap scaled = pixmap.scaled(avatarSize, avatarSize, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
+            QPixmap pixmap(avatarPath);
+            if (pixmap.isNull()) {
+                qDebug() << "Failed to load image from" << avatarPath;
+                return;
+            }
 
-            QPixmap circularMask(avatarSize, avatarSize);
-            circularMask.fill(Qt::transparent);
+            // Scale the pixmap to desired size
+            pixmap = pixmap.scaled(avatarSize, avatarSize, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation);
 
-            QPainter maskPainter(&circularMask);
-            maskPainter.setRenderHint(QPainter::Antialiasing);
-            maskPainter.setBrush(Qt::white);
-            maskPainter.setPen(Qt::NoPen);
-            maskPainter.drawEllipse(0, 0, avatarSize, avatarSize);
+            // Create a circular mask using QPainterPath
+            QPixmap circularPixmap(avatarSize, avatarSize);
+            circularPixmap.fill(Qt::transparent);
 
-            scaled.setMask(circularMask.createMaskFromColor(Qt::transparent));
+            QPainter painter(&circularPixmap);
+            painter.setRenderHint(QPainter::Antialiasing);
+            QPainterPath path;
+            path.addEllipse(0, 0, avatarSize, avatarSize);
+            painter.setClipPath(path);
+            painter.drawPixmap(0, 0, pixmap);
+            painter.end();
 
-            ui->profileAvatarButton->setIcon(QIcon(scaled));
-            ui->profileAvatarButton->setIconSize(QSize(avatarSize, avatarSize));
-            ui->profileAvatarButton->setFixedSize(avatarSize, avatarSize);
-            ui->profileAvatarButton->setStyleSheet(
-                QString("border: none; border-radius: %1px;").arg(avatarSize / 2)
+            // Set the circular pixmap as icon
+            profileToolButton->setIcon(QIcon(circularPixmap));
+            profileToolButton->setIconSize(QSize(avatarSize, avatarSize));
+            profileToolButton->setFixedSize(avatarSize, avatarSize);
+
+            profileToolButton->setStyleSheet(
+                QString(
+                    "QToolButton { border: none; border-radius: %1px; background-color: #F497B6; }"
+                    "QToolButton:hover { background-color: #e6769f; }"
+                    ).arg(avatarSize / 2)
                 );
         }
-
     }
-
     db.close();
 }
 
-
-
-void Dashboard::on_profileAvatarButton_clicked()
+void Dashboard::openProfile()
 {
-    w=new MainWindow();
+    MainWindow *w = new MainWindow();
     connect(w, &MainWindow::profileUpdatedSignal, this, &Dashboard::loadProfileAvatar);
     w->show();
 }
 
+void Dashboard::logoutUser()
+{
+    qDebug() << "Logout clicked!";
+
+    if (m_loginPage)
+        m_loginPage->show();
+
+    this->close();
+}
+
+
+void Dashboard::on_moodmgmt_clicked()
+{
+    Moodmanagement *mood = new Moodmanagement();
+    mood->show();
+}
+
+void Dashboard::on_yogapb_clicked()
+{
+    yoga *yog = new yoga();
+    yog->show();
+}
+
+void Dashboard::on_sanitarycarepb_clicked()
+{
+    SanitaryCare *scare = new SanitaryCare();
+    scare->show();
+}
+
+void Dashboard::on_nutripb_clicked()
+{
+    nutrients *nutri = new nutrients();
+    nutri->show();
+}
+
+void Dashboard::on_trackerpb_clicked()
+{
+    PeriodCalendar *track = new PeriodCalendar();
+    track->show();
+}
+
+void Dashboard::showRandomQuote()
+{
+    QStringList quotes = {
+        "🌸 <i>Be kind to yourself.</i><br>✨ <i>You're doing better than you think.</i>",
+        "💪 <i>Believe in yourself.</i><br>🌈 <i>You’ve got this!</i>",
+        "🧘‍♀️ <i>Pause. Breathe. Relax.</i><br>🌙 <i>This moment is yours.</i>",
+        "🍫 <i>Take a break.</i><br>💖 <i>You deserve care too.</i>",
+        "🛌 <i>Rest isn’t lazy.</i><br>🌷 <i>It’s healing.</i>"
+    };
+
+    int index = QRandomGenerator::global()->bounded(quotes.size());
+    QString selectedQuote = "“" + quotes[index] + "”";
+
+    ui->quotelabel->setText(selectedQuote);
+    ui->quotelabel->setWordWrap(true);
+    ui->quotelabel->setAlignment(Qt::AlignCenter);
+    ui->quotelabel->setStyleSheet("font-size: 60px; color: #555; padding: 10px;");
+}

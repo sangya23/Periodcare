@@ -39,28 +39,31 @@ template <> constexpr inline auto Dashboard::qt_create_metaobjectdata<qt_meta_ta
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "Dashboard",
-        "on_moodmgmt_clicked",
+        "openProfile",
         "",
+        "logoutUser",
+        "on_moodmgmt_clicked",
         "on_yogapb_clicked",
         "on_sanitarycarepb_clicked",
         "on_nutripb_clicked",
-        "on_trackerpb_clicked",
-        "on_profileAvatarButton_clicked"
+        "on_trackerpb_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'on_moodmgmt_clicked'
+        // Slot 'openProfile'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_yogapb_clicked'
+        // Slot 'logoutUser'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_sanitarycarepb_clicked'
+        // Slot 'on_moodmgmt_clicked'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_nutripb_clicked'
+        // Slot 'on_yogapb_clicked'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_trackerpb_clicked'
+        // Slot 'on_sanitarycarepb_clicked'
         QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_profileAvatarButton_clicked'
+        // Slot 'on_nutripb_clicked'
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_trackerpb_clicked'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -84,12 +87,13 @@ void Dashboard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     auto *_t = static_cast<Dashboard *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->on_moodmgmt_clicked(); break;
-        case 1: _t->on_yogapb_clicked(); break;
-        case 2: _t->on_sanitarycarepb_clicked(); break;
-        case 3: _t->on_nutripb_clicked(); break;
-        case 4: _t->on_trackerpb_clicked(); break;
-        case 5: _t->on_profileAvatarButton_clicked(); break;
+        case 0: _t->openProfile(); break;
+        case 1: _t->logoutUser(); break;
+        case 2: _t->on_moodmgmt_clicked(); break;
+        case 3: _t->on_yogapb_clicked(); break;
+        case 4: _t->on_sanitarycarepb_clicked(); break;
+        case 5: _t->on_nutripb_clicked(); break;
+        case 6: _t->on_trackerpb_clicked(); break;
         default: ;
         }
     }
@@ -115,14 +119,14 @@ int Dashboard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

@@ -146,7 +146,7 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="profileAvatarButton">
+       <widget class="QToolButton" name="profileAvatarButton">
         <property name="minimumSize">
          <size>
           <width>100</width>
@@ -160,17 +160,17 @@
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton {
-    background-color: #F497B6;      
-    color: white;                   
-    font: 12px &quot;Arial&quot;;
-    border-radius: 8px;
-    padding: 6px 12px;
-}
-QPushButton:hover
-{
-background-color: #e6769f;}
-</string>
+         <string notr="true">/*QToolButton {
+          background-color: #F497B6;
+          color: white;
+          font: 12px &quot;Arial&quot;;
+          border-radius: 8px;
+          padding: 6px 12px;
+      }
+      QToolButton:hover
+      {
+      background-color: #e6769f;}
+      </string>
         </property>
         <property name="text">
          <string/>
@@ -188,13 +188,13 @@ background-color: #e6769f;}
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>55</height>
+            <height>70</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>55</height>
+            <height>70</height>
            </size>
           </property>
           <property name="text">
@@ -203,10 +203,10 @@ background-color: #e6769f;}
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="quotelabel">
           <property name="minimumSize">
            <size>
-            <width>400</width>
+            <width>800</width>
             <height>400</height>
            </size>
           </property>
@@ -217,9 +217,7 @@ background-color: #e6769f;}
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true">border-image: url(:/loginicons/normalcycle.jpg);
-border-radius: 150px;
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string/>
@@ -246,7 +244,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>Tracking</string>
+           <string>🗓️Tracking</string>
           </property>
          </widget>
         </item>
@@ -266,7 +264,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>mood </string>
+           <string>😊mood </string>
           </property>
          </widget>
         </item>
@@ -286,7 +284,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>Yoga</string>
+           <string>🧘‍Yoga</string>
           </property>
          </widget>
         </item>
@@ -306,7 +304,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>Sanitary Care</string>
+           <string>🩸Sanitary Care</string>
           </property>
          </widget>
         </item>
@@ -326,7 +324,7 @@ background-color: #e6769f;}
 </string>
           </property>
           <property name="text">
-           <string>Nutrients</string>
+           <string>🥬Nutrients</string>
           </property>
          </widget>
         </item>

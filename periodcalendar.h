@@ -57,7 +57,6 @@ private:
     const QColor PredictedPeriodColor = QColor(155, 48, 255);
     const QColor FertileWindowColor = QColor(178, 242, 187);
 
-#endif
-
 };
+#endif
 

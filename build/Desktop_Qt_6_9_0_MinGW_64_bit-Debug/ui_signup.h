@@ -164,7 +164,7 @@ public:
 "}"));
         passkeysule = new QLineEdit(frame);
         passkeysule->setObjectName("passkeysule");
-        passkeysule->setGeometry(QRect(30, 240, 251, 31));
+        passkeysule->setGeometry(QRect(30, 240, 251, 34));
         passkeysule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -176,7 +176,7 @@ public:
 ""));
         emailsule = new QLineEdit(frame);
         emailsule->setObjectName("emailsule");
-        emailsule->setGeometry(QRect(30, 130, 251, 31));
+        emailsule->setGeometry(QRect(30, 130, 251, 34));
         emailsule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -188,7 +188,7 @@ public:
 ""));
         pwdsule = new QLineEdit(frame);
         pwdsule->setObjectName("pwdsule");
-        pwdsule->setGeometry(QRect(30, 180, 251, 31));
+        pwdsule->setGeometry(QRect(30, 180, 251, 34));
         pwdsule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"

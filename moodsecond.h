@@ -1,7 +1,7 @@
 #ifndef MOODSECOND_H
 #define MOODSECOND_H
-
 #include <QMainWindow>
+#include "moodlogdialog.h"
 
 namespace Ui {
 class moodsecond;
@@ -18,6 +18,7 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
 private:
     Ui::moodsecond *ui;
 };
