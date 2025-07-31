@@ -127,8 +127,15 @@
           <height>55</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 18pt &quot;Segoe Print&quot;;
+</string>
+        </property>
         <property name="text">
-         <string>WELCOME TO PERIOD</string>
+         <string>PERIOD🩸</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
        </widget>
       </item>

@@ -18,6 +18,10 @@ public:
 private slots:
     void on_okcp_clicked();
 
+    void on_showPasswordCheckBox_toggled(bool checked);
+
+    void on_cancelcp_clicked();
+
 private:
     Ui::changepwd *ui;
 };

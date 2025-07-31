@@ -90,3 +90,15 @@ void Loginpage::on_forgotpwd_clicked()
 }
 
 
+
+void Loginpage::on_showPasswordCheckBox_toggled(bool checked)
+{
+
+        if (checked) {
+            ui->pwdlineedit->setEchoMode(QLineEdit::Normal);
+        } else {
+            ui->pwdlineedit->setEchoMode(QLineEdit::Password);
+        }
+
+}
+

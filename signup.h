@@ -17,6 +17,8 @@ public:
 
 private slots:
     void on_createacc_clicked();
+    void on_showPasswordCheckBox_toggled(bool checked);
+
 private:
     Welcome *well;
 private:

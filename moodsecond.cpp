@@ -47,7 +47,6 @@ void moodsecond::on_pushButton_clicked()
         qDebug() << "Mood logged for" << currentUserEmail << "as" << selectedMood;
     }
 
-    this->close();
 }
 
 

@@ -183,11 +183,11 @@ void Dashboard::on_trackerpb_clicked()
 void Dashboard::showRandomQuote()
 {
     QStringList quotes = {
-        "🌸 <i>Be kind to yourself.</i><br>✨ <i>You're doing better than you think.</i>",
+        "🌸 <i>Be kind to yourself.</i><br> <i>You're doing better than you think.</i>✨",
         "💪 <i>Believe in yourself.</i><br>🌈 <i>You’ve got this!</i>",
-        "🧘‍♀️ <i>Pause. Breathe. Relax.</i><br>🌙 <i>This moment is yours.</i>",
+        "🧘‍♀️ <i>Pause. Breathe. Relax.</i><br> <i>This moment is yours.</i>🌙",
         "🍫 <i>Take a break.</i><br>💖 <i>You deserve care too.</i>",
-        "🛌 <i>Rest isn’t lazy.</i><br>🌷 <i>It’s healing.</i>"
+        "🛌 <i>Rest isn’t lazy.</i><br> <i>It’s healing.</i>🌷"
     };
 
     int index = QRandomGenerator::global()->bounded(quotes.size());
@@ -196,5 +196,5 @@ void Dashboard::showRandomQuote()
     ui->quotelabel->setText(selectedQuote);
     ui->quotelabel->setWordWrap(true);
     ui->quotelabel->setAlignment(Qt::AlignCenter);
-    ui->quotelabel->setStyleSheet("font-size: 60px; color: #555; padding: 10px;");
+    ui->quotelabel->setStyleSheet("font-size: 40px; color: #555; padding: 10px;");
 }

@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
@@ -40,6 +41,7 @@ public:
     QPushButton *alreadyacc;
     QLabel *label;
     QTextBrowser *textBrowser;
+    QCheckBox *showPasswordCheckBox;
     QMenuBar *menubar;
     QMenu *menuSignup_Page;
     QStatusBar *statusbar;
@@ -140,7 +142,7 @@ public:
         frame->setFrameShadow(QFrame::Shadow::Raised);
         createacc = new QPushButton(frame);
         createacc->setObjectName("createacc");
-        createacc->setGeometry(QRect(80, 350, 141, 31));
+        createacc->setGeometry(QRect(90, 360, 141, 31));
         createacc->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
 "    color: white;                   \n"
@@ -164,7 +166,7 @@ public:
 "}"));
         passkeysule = new QLineEdit(frame);
         passkeysule->setObjectName("passkeysule");
-        passkeysule->setGeometry(QRect(30, 240, 251, 34));
+        passkeysule->setGeometry(QRect(30, 230, 251, 34));
         passkeysule->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -200,7 +202,7 @@ public:
 ""));
         alreadyacc = new QPushButton(frame);
         alreadyacc->setObjectName("alreadyacc");
-        alreadyacc->setGeometry(QRect(70, 390, 181, 31));
+        alreadyacc->setGeometry(QRect(70, 400, 181, 31));
         alreadyacc->setAutoFillBackground(false);
         alreadyacc->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
@@ -229,11 +231,15 @@ public:
         label->setIndent(1);
         textBrowser = new QTextBrowser(frame);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(30, 280, 301, 41));
+        textBrowser->setGeometry(QRect(30, 310, 301, 41));
         textBrowser->setStyleSheet(QString::fromUtf8("QTextBrowser\n"
 "{\n"
 "border-color:#fce4ec;\n"
 "}"));
+        showPasswordCheckBox = new QCheckBox(frame);
+        showPasswordCheckBox->setObjectName("showPasswordCheckBox");
+        showPasswordCheckBox->setGeometry(QRect(130, 280, 121, 16));
+        showPasswordCheckBox->setStyleSheet(QString::fromUtf8("background-color: #fce4ec;"));
 
         gridLayout->addWidget(frame, 0, 0, 1, 1);
 
@@ -271,6 +277,7 @@ public:
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">By signing in you're agreeing to your data being used by peridcare</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        showPasswordCheckBox->setText(QCoreApplication::translate("Signup", "Show Password", nullptr));
         menuSignup_Page->setTitle(QCoreApplication::translate("Signup", "Signup Page", nullptr));
     } // retranslateUi
 

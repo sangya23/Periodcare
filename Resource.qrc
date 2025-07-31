@@ -10,6 +10,7 @@
         <file>key.jpg</file>
         <file>LOGO.jpg</file>
         <file>normalcycle.jpg</file>
+        <file>picforhomepage.jpg</file>
     </qresource>
     <qresource prefix="/tryout"/>
 </RCC>

@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
@@ -35,6 +36,7 @@ public:
     QLabel *label_2;
     QPushButton *createaccount;
     QPushButton *forgotpwd;
+    QCheckBox *showPasswordCheckBox;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Loginpage)
@@ -70,7 +72,7 @@ public:
         frame->setFrameShadow(QFrame::Shadow::Raised);
         lOGIN = new QPushButton(frame);
         lOGIN->setObjectName("lOGIN");
-        lOGIN->setGeometry(QRect(110, 240, 91, 31));
+        lOGIN->setGeometry(QRect(110, 270, 91, 31));
         lOGIN->setAutoFillBackground(false);
         lOGIN->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
@@ -105,7 +107,7 @@ public:
 "}"));
         pwdlineedit = new QLineEdit(frame);
         pwdlineedit->setObjectName("pwdlineedit");
-        pwdlineedit->setGeometry(QRect(20, 170, 261, 35));
+        pwdlineedit->setGeometry(QRect(20, 180, 261, 35));
         pwdlineedit->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: #FFFFFF;\n"
 "    color: #3D3D3D;\n"
@@ -128,7 +130,7 @@ public:
         label_2->setMargin(5);
         createaccount = new QPushButton(frame);
         createaccount->setObjectName("createaccount");
-        createaccount->setGeometry(QRect(160, 290, 131, 26));
+        createaccount->setGeometry(QRect(170, 320, 131, 26));
         createaccount->setAutoFillBackground(false);
         createaccount->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
@@ -143,7 +145,7 @@ public:
 ""));
         forgotpwd = new QPushButton(frame);
         forgotpwd->setObjectName("forgotpwd");
-        forgotpwd->setGeometry(QRect(10, 290, 141, 26));
+        forgotpwd->setGeometry(QRect(10, 320, 141, 26));
         forgotpwd->setAutoFillBackground(false);
         forgotpwd->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #F497B6;      \n"
@@ -156,6 +158,10 @@ public:
 "{\n"
 "background-color: #e6769f;}\n"
 ""));
+        showPasswordCheckBox = new QCheckBox(frame);
+        showPasswordCheckBox->setObjectName("showPasswordCheckBox");
+        showPasswordCheckBox->setGeometry(QRect(100, 230, 121, 16));
+        showPasswordCheckBox->setStyleSheet(QString::fromUtf8("background-color: #fce4ec;"));
         label_2->raise();
         lOGIN->raise();
         label->raise();
@@ -163,6 +169,7 @@ public:
         pwdlineedit->raise();
         createaccount->raise();
         forgotpwd->raise();
+        showPasswordCheckBox->raise();
 
         gridLayout->addWidget(frame, 0, 0, 1, 1);
 
@@ -186,6 +193,7 @@ public:
         label_2->setText(QString());
         createaccount->setText(QCoreApplication::translate("Loginpage", "Create an account", nullptr));
         forgotpwd->setText(QCoreApplication::translate("Loginpage", "Forgot Password?", nullptr));
+        showPasswordCheckBox->setText(QCoreApplication::translate("Loginpage", "Show Password", nullptr));
     } // retranslateUi
 
 };

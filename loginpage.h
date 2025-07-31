@@ -32,6 +32,8 @@ private slots:
 
     void on_forgotpwd_clicked();
 
+    void on_showPasswordCheckBox_toggled(bool checked);
+
 private:
     Ui::Loginpage *ui;
 };

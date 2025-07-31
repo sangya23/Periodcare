@@ -73,3 +73,21 @@ void changepwd::on_okcp_clicked()
     this->close();
 }
 
+
+void changepwd::on_showPasswordCheckBox_toggled(bool checked)
+{
+    if (checked) {
+        ui->changepwdle->setEchoMode(QLineEdit::Normal);
+        ui->confirmpwdle->setEchoMode(QLineEdit::Normal);
+    } else {
+        ui->changepwdle->setEchoMode(QLineEdit::Password);
+        ui->confirmpwdle->setEchoMode(QLineEdit::Password);
+    }
+}
+
+
+void changepwd::on_cancelcp_clicked()
+{
+    this->close();
+}
+

@@ -89,6 +89,9 @@ public:
         label_2->setObjectName("label_2");
         label_2->setMinimumSize(QSize(0, 55));
         label_2->setMaximumSize(QSize(16777215, 55));
+        label_2->setStyleSheet(QString::fromUtf8("font: 700 18pt \"Segoe Print\";\n"
+""));
+        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout->addWidget(label_2);
 
@@ -254,7 +257,7 @@ public:
     {
         Dashboard->setWindowTitle(QCoreApplication::translate("Dashboard", "MainWindow", nullptr));
         label_3->setText(QString());
-        label_2->setText(QCoreApplication::translate("Dashboard", "WELCOME TO PERIOD", nullptr));
+        label_2->setText(QCoreApplication::translate("Dashboard", "PERIOD\360\237\251\270", nullptr));
         profileAvatarButton->setText(QString());
         welcomeLabel->setText(QString());
         quotelabel->setText(QString());

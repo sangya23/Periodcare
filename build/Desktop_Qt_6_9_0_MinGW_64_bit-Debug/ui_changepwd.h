@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -32,6 +33,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *cancelcp;
     QLabel *label;
+    QCheckBox *showPasswordCheckBox;
 
     void setupUi(QDialog *changepwd)
     {
@@ -68,7 +70,7 @@ public:
 ""));
         horizontalLayoutWidget = new QWidget(changepwd);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
-        horizontalLayoutWidget->setGeometry(QRect(150, 200, 161, 80));
+        horizontalLayoutWidget->setGeometry(QRect(110, 210, 161, 80));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -119,6 +121,10 @@ public:
 "    border-radius: 8px;\n"
 "    padding: 6px 12px;\n"
 "}"));
+        showPasswordCheckBox = new QCheckBox(changepwd);
+        showPasswordCheckBox->setObjectName("showPasswordCheckBox");
+        showPasswordCheckBox->setGeometry(QRect(130, 180, 121, 16));
+        showPasswordCheckBox->setStyleSheet(QString::fromUtf8("background-color: #fce4ec;"));
 
         retranslateUi(changepwd);
 
@@ -131,6 +137,7 @@ public:
         okcp->setText(QCoreApplication::translate("changepwd", "OK", nullptr));
         cancelcp->setText(QCoreApplication::translate("changepwd", "Cancel", nullptr));
         label->setText(QCoreApplication::translate("changepwd", "<html><head/><body><p align=\"center\">Change Password</p></body></html>", nullptr));
+        showPasswordCheckBox->setText(QCoreApplication::translate("changepwd", "Show Password", nullptr));
     } // retranslateUi
 
 };

@@ -115,3 +115,13 @@ void Signup::on_createacc_clicked()
 
 
 
+
+void Signup::on_showPasswordCheckBox_toggled(bool checked)
+{
+    if (checked) {
+        ui->pwdsule->setEchoMode(QLineEdit::Normal);
+    } else {
+        ui->pwdsule->setEchoMode(QLineEdit::Password);
+    }
+}
+
