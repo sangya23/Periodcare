@@ -15,7 +15,6 @@ class Dashboard : public QMainWindow
     Q_OBJECT
 
 public:
-    // Pass Loginpage pointer in constructor and save it
     explicit Dashboard(Loginpage *loginPage, QWidget *parent = nullptr);
     ~Dashboard();
 
@@ -33,8 +32,6 @@ private:
     void showRandomQuote();
 
     Ui::Dashboard *ui;
-
-    // Pointer to Loginpage to show it again on logout
     Loginpage *m_loginPage;
 };
 
